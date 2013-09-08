@@ -103,6 +103,7 @@ if (!isDedicated) then {
 	waitUntil {!isNil "dayz_loadScreenMsg"};
 	dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
 	_void = [] execVM "Plugins\traders\init.sqf";
+	[] execVM "Plugins\repair\repairactions.sqf";
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
@@ -138,7 +139,7 @@ if (!isDedicated) then {
    [] ExecVM "Maps\chenaid.sqf"; // Activation
    [] ExecVM "Maps\skacast.sqf"; // Activation
    [] ExecVM "Maps\novylugmedcheck.sqf"; // Activation
-   [] execVM "sectorfng\sectorfng_init.sqf";
+   //[] execVM "sectorfng\sectorfng_init.sqf";
 
 sleep 20;
 //////////BUILDINGS//////////
