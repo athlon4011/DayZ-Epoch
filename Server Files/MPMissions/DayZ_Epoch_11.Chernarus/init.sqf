@@ -29,11 +29,6 @@ dayz_maxLocalZombies = 30; // Default = 30
 EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"]];
 dayz_fullMoonNights = true;
 
-DefaultMagazines = ["ItemBandage","ItemBandage","7Rnd_45ACP_1911","ItemPainkiller","ItemMorphine"]; 
-DefaultWeapons = ["Colt1911","ItemFlashlightRed","Binocular","ItemKnife","ItemMap"]; 
-DefaultBackpack = "DZ_Assault_Pack_EP1"; 
-DefaultBackpackWeapon = "";
-
 //Load in compiled functions
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
 progressLoadingScreen 0.1;
@@ -41,7 +36,7 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";	
 progressLoadingScreen 0.2;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	//Functions used by CLIENT for medical
 progressLoadingScreen 0.4;
-call compile preprocessFileLineNumbers "dayz_code\init\compiles.sqf";				//Compile regular functions
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
 progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
 progressLoadingScreen 1.0;
@@ -102,55 +97,13 @@ if (!isDedicated) then {
 	0 fadeSound 0;
 	waitUntil {!isNil "dayz_loadScreenMsg"};
 	dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
-	_void = [] execVM "Plugins\traders\init.sqf";
+	
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
 	_void = [] execVM "R3F_Realism\R3F_Realism_Init.sqf";
+	
+	//Lights
+	//[] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 };
 #include "\z\addons\dayz_code\system\REsec.sqf"
-
-// Load Bases
-   [] ExecVM "Maps\Sobor_Hospital.sqf"; // Activation
-   [] execVM "Maps\villages.sqf"; //Epoch Villages - By Bungle (ON)
-   [] execVM "Maps\raceday.sqf"; //Coastal Race Day - By Bungle (ON)
-   [] ExecVM "Maps\Airtrip_Camp.sqf"; // Activation
-   [] ExecVM "Maps\Barrage_Dan.sqf"; // Activation
-   [] ExecVM "Maps\BlackLac_Dan.sqf"; // Activation
-   [] ExecVM "Maps\Bois1_Dan.sqf"; // Activation
-   [] ExecVM "Maps\DeadCastle_Dan.sqf"; // Activation
-   [] ExecVM "Maps\Dubrovka_Detruit.sqf"; // Activation
-   [] ExecVM "Maps\LieuxditPenduAto.sqf"; // Activation
-   [] ExecVM "Maps\oilfieldsbase.sqf"; // Activation
-   [] ExecVM "Maps\balota.sqf"; // Activation
-   [] ExecVM "Maps\berezino.sqf"; // Activation
-   [] ExecVM "Maps\cherno_base.sqf"; // Activation
-   [] ExecVM "Maps\dichina.sqf"; // Activation
-   [] ExecVM "Maps\last_stand.sqf"; // Activation
-   [] ExecVM "Maps\ne_airstrip.sqf"; // Activation
-   [] ExecVM "Maps\nw_airstrip.sqf"; // Activation
-   [] ExecVM "Maps\NovyLugBase.sqf"; // Activation
-   [] ExecVM "Maps\lopatino.sqf"; // Activation
-   [] ExecVM "Maps\excelsior.sqf"; // Activation
-   [] ExecVM "Maps\train_wreck.sqf"; // Activation
-   [] ExecVM "Maps\kamenka_v2.sqf"; // Activation
-   [] ExecVM "Maps\devils_castle_outpot.sqf"; // Activation
-   [] ExecVM "Maps\chenaid.sqf"; // Activation
-   [] ExecVM "Maps\skacast.sqf"; // Activation
-   [] ExecVM "Maps\novylugmedcheck.sqf"; // Activation
-   [] execVM "sectorfng\sectorfng_init.sqf";
-
-sleep 20;
-//////////BUILDINGS//////////
-[] execVM "Maps\buildings\lopatino.sqf";
-[] execVM "Maps\buildings\NovyLugBase.sqf";
-[] execVM "Maps\buildings\wtf_base.sqf";
-[] execVM "Maps\buildings\bandits.sqf";
-[] ExecVM "Maps\buildings\devfish_camptents.sqf";
-
-// UPSMON
-call compile preprocessFileLineNumbers "Plugins\sarge\UPSMON\scripts\Init_UPSMON.sqf";
-// SHK 
-call compile preprocessfile "Plugins\sarge\SHK_pos\shk_pos_init.sqf";
-// run SAR_AI
-[] execVM "Plugins\sarge\SARGE\SAR_AI_init.sqf";
