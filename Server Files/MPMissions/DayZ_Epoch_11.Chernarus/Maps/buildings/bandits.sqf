@@ -427,7 +427,7 @@ if (true) then
 {
   _this = createVehicle ["USBasicWeaponsBox", [11236.216, 4284.2324, 0.03016034], [], 0, "CAN_COLLIDE"];
   _vehicle_54 = _this;
-  _this setVehicleInit "null0 = this execVM ""custom\ammocrate.sqf"";";
+  _this setVehicleInit "null0 = this execVM ""Plugins\ammocrates\ammocrate.sqf"";";
   _this setPos [11236.216, 4284.2324, 0.03016034];
 };
 
