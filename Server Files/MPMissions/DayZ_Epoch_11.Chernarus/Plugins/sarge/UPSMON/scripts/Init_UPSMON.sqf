@@ -18,9 +18,9 @@
 	
     private ["_s","_l"];
 
-    "KRON_UPS_EAST_SURRENDED" addPublicVariableEventHandler { if (_this select 1) then { nul=[east] execvm "addons\UPSMON\scripts\UPSMON\MON_surrended.sqf";};};
-	"KRON_UPS_WEST_SURRENDED" addPublicVariableEventHandler { if (_this select 1) then { nul=[west] execvm "addons\UPSMON\scripts\UPSMON\MON_surrended.sqf";};};
-	"KRON_UPS_GUER_SURRENDED" addPublicVariableEventHandler { if (_this select 1) then { nul=[resistance] execvm "addons\UPSMON\scripts\UPSMON\MON_surrended.sqf";};};
+    "KRON_UPS_EAST_SURRENDED" addPublicVariableEventHandler { if (_this select 1) then { nul=[east] execvm "Plugins\sarge\UPSMON\scripts\UPSMON\MON_surrended.sqf";};};
+	"KRON_UPS_WEST_SURRENDED" addPublicVariableEventHandler { if (_this select 1) then { nul=[west] execvm "Plugins\sarge\UPSMON\scripts\UPSMON\MON_surrended.sqf";};};
+	"KRON_UPS_GUER_SURRENDED" addPublicVariableEventHandler { if (_this select 1) then { nul=[resistance] execvm "Plugins\sarge\UPSMON\scripts\UPSMON\MON_surrended.sqf";};};
 	"MON_LOCAL_EXEC" addPublicVariableEventHandler { if (local ((_this select 1)select 0)) then {
 		call ( compile format[(_this select 1)select 1,(_this select 1)select 0] );
 		};
@@ -175,16 +175,16 @@ KRON_UPS_ARTILLERY_GUER_FIRE = false; //set to true for doing resistance to fire
 	if (isNil("KRON_UPS_INIT") || KRON_UPS_INIT == 0) then {
 
 		//Init library function, Required Version: 5.0 of mon_functions
-		call compile preprocessFileLineNumbers "addons\UPSMON\scripts\UPSMON\common\MON_functions.sqf";
+		call compile preprocessFileLineNumbers "Plugins\sarge\UPSMON\scripts\UPSMON\common\MON_functions.sqf";
 		
 		//init !R functions
-		call compile preprocessFileLineNumbers "addons\UPSMON\scripts\UPSMON\!R\R_functions.sqf";
+		call compile preprocessFileLineNumbers "Plugins\sarge\UPSMON\scripts\UPSMON\!R\R_functions.sqf";
 		
 		if (isNil "RE") then {[] execVM "\ca\Modules\MP\data\scripts\MPframework.sqf"}; 
 		
 		//scripts initialization
-		UPSMON = compile preprocessFile "addons\UPSMON\scripts\UPSMON.sqf";	
-		UPSMON_surrended = compile preprocessFile "addons\UPSMON\scripts\UPSMON\MON_surrended.sqf";	
+		UPSMON = compile preprocessFile "Plugins\sarge\UPSMON\scripts\UPSMON.sqf";	
+		UPSMON_surrended = compile preprocessFile "Plugins\sarge\UPSMON\scripts\UPSMON\MON_surrended.sqf";	
 
 		// declaraci�n de variables privadas
 		private["_obj","_trg","_l","_pos"];

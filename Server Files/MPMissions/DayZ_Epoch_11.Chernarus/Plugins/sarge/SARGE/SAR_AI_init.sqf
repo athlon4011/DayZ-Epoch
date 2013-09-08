@@ -30,9 +30,9 @@ if (!isServer) then { // only run this on the connected clients
 }; 
 
 // preprocessing relevant clientside scripts
-SAR_AI_trace                      = compile preprocessFileLineNumbers "addons\SARGE\SAR_trace_entities.sqf";
-SAR_AI_trace_veh                  = compile preprocessFileLineNumbers "addons\SARGE\SAR_trace_from_vehicle.sqf";
-SAR_AI_hit                        = compile preprocessFileLineNumbers "addons\SARGE\SAR_aihit.sqf";
+SAR_AI_trace                      = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_trace_entities.sqf";
+SAR_AI_trace_veh                  = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_trace_from_vehicle.sqf";
+SAR_AI_hit                        = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_aihit.sqf";
 
 
 if (!isServer) exitWith {}; // only run this on the server
@@ -42,21 +42,21 @@ diag_log format["Starting SAR_AI version %1 on a %2",SAR_version,SAR_environment
 diag_log "----------------------------------------";
 
 // activate functions library
-call compile preprocessFileLineNumbers "addons\SARGE\SAR_functions.sqf";
+call compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_functions.sqf";
 
 
 // preprocessing relevant serverside scripts
-SAR_AI                      = compile preprocessFileLineNumbers "addons\SARGE\SAR_setup_AI_patrol.sqf";
-SAR_AI_heli                 = compile preprocessFileLineNumbers "addons\SARGE\SAR_setup_AI_patrol_heli.sqf";
-SAR_AI_land                 = compile preprocessFileLineNumbers "addons\SARGE\SAR_setup_AI_patrol_land.sqf";
-SAR_AI_reammo               = compile preprocessFileLineNumbers "addons\SARGE\SAR_reammo_refuel_AI.sqf";
-SAR_AI_spawn                = compile preprocessFileLineNumbers "addons\SARGE\SAR_AI_spawn.sqf";
-SAR_AI_despawn              = compile preprocessFileLineNumbers "addons\SARGE\SAR_AI_despawn.sqf";
-SAR_AI_killed               = compile preprocessFileLineNumbers "addons\SARGE\SAR_aikilled.sqf";
-SAR_AI_UPSMON               = compile preprocessFileLineNumbers "addons\UPSMON\scripts\upsmon.sqf";
-SAR_AI_VEH_HIT              = compile preprocessFileLineNumbers "addons\SARGE\SAR_ai_vehicle_hit.sqf";
-SAR_AI_GROUP_MONITOR        = compile preprocessFileLineNumbers "addons\SARGE\SAR_group_monitor.sqf";
-SAR_AI_VEH_FIX              = compile preprocessFileLineNumbers "addons\SARGE\SAR_vehicle_fix.sqf";
+SAR_AI                      = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_setup_AI_patrol.sqf";
+SAR_AI_heli                 = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_setup_AI_patrol_heli.sqf";
+SAR_AI_land                 = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_setup_AI_patrol_land.sqf";
+SAR_AI_reammo               = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_reammo_refuel_AI.sqf";
+SAR_AI_spawn                = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_AI_spawn.sqf";
+SAR_AI_despawn              = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_AI_despawn.sqf";
+SAR_AI_killed               = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_aikilled.sqf";
+SAR_AI_UPSMON               = compile preprocessFileLineNumbers "Plugins\sarge\UPSMON\scripts\upsmon.sqf";
+SAR_AI_VEH_HIT              = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_ai_vehicle_hit.sqf";
+SAR_AI_GROUP_MONITOR        = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_group_monitor.sqf";
+SAR_AI_VEH_FIX              = compile preprocessFileLineNumbers "Plugins\sarge\SARGE\SAR_vehicle_fix.sqf";
 
 
 // Public Eventhandlers

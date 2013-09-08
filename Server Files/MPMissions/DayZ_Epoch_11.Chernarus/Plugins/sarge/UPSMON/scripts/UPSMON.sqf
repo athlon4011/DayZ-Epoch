@@ -2734,7 +2734,7 @@ if (_respawn && {_respawnmax > 0} &&  {!_surrended}) then {
 
         _cond="(side _this == west) && (side _target == SAR_AI_friendly_side) && ('ItemBloodbag' in magazines _this)";
 
-        [nil,_leader,rADDACTION,"Give me a blood transfusion!", "addons\SARGE\SAR_interact.sqf","",1,true,true,"",_cond] call RE;
+        [nil,_leader,rADDACTION,"Give me a blood transfusion!", "Plugins\sarge\SARGE\SAR_interact.sqf","",1,true,true,"",_cond] call RE;
          
         [_leader] joinSilent _group;
 
