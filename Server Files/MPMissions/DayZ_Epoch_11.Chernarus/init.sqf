@@ -30,7 +30,7 @@ EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","
 dayz_fullMoonNights = true;
 
 DefaultMagazines = ["ItemBandage","ItemBandage","7Rnd_45ACP_1911","ItemPainkiller","ItemMorphine"]; 
-DefaultWeapons = ["Colt1911","ItemFlashlightRed","Binocular","ItemKnife","ItemMap"]; 
+DefaultWeapons = ["Colt1911","ItemFlashlightRed","Binocular","ItemKnife","ItemMap","ItemHatchet"]; 
 DefaultBackpack = "DZ_Assault_Pack_EP1"; 
 DefaultBackpackWeapon = "";
 
