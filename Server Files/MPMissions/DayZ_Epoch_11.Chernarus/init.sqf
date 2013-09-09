@@ -16,12 +16,13 @@ dayz_previousID = 0;
 player setVariable ["BIS_noCoreConversations", true];
 //disable radio messages to be heard and shown in the left lower corner of the screen
 enableRadio false;
+DZE_DeathMsgGlobal = true;
 
 // DayZ Epoch config
 spawnShoremode = 1; // Default = 1 (on shore)
 spawnArea= 1500; // Default = 1500
 MaxHeliCrashes= 5; // Default = 5
-MaxVehicleLimit = 300; // Default = 50
+MaxVehicleLimit = 350; // Default = 50
 MaxDynamicDebris = 500; // Default = 100
 dayz_MapArea = 14000; // Default = 10000
 dayz_maxLocalZombies = 30; // Default = 30 
@@ -41,9 +42,10 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";	
 progressLoadingScreen 0.2;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	//Functions used by CLIENT for medical
 progressLoadingScreen 0.4;
-call compile preprocessFileLineNumbers "dayz_code\init\compiles.sqf";				//Compile regular functions
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
 progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
+call compile preprocessFileLineNumbers "dayz_code\init\compiles.sqf";				//Compile regular functions
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
@@ -102,7 +104,7 @@ if (!isDedicated) then {
 	0 fadeSound 0;
 	waitUntil {!isNil "dayz_loadScreenMsg"};
 	dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
-	_void = [] execVM "Plugins\traders\init.sqf";
+	//_void = [] execVM "Plugins\traders\init.sqf";
 	[] execVM "Plugins\repair\repairactions.sqf";
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
@@ -139,7 +141,7 @@ if (!isDedicated) then {
    [] ExecVM "Maps\chenaid.sqf"; // Activation
    [] ExecVM "Maps\skacast.sqf"; // Activation
    [] ExecVM "Maps\novylugmedcheck.sqf"; // Activation
-   //[] execVM "sectorfng\sectorfng_init.sqf";
+   [] execVM "Maps\sectorfng\sectorfng_init.sqf";
 
 sleep 20;
 //////////BUILDINGS//////////
