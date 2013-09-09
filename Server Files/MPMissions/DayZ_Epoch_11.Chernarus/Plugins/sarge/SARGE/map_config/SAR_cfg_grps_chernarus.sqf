@@ -1,3 +1,7 @@
+
+/// !!! http://snuletek.org/arma2coordcalc/
+
+
 // =========================================================================================================
 //  SAR_AI - DayZ AI library
 //  Version: 1.5.0 
@@ -69,65 +73,89 @@ if (SAR_dynamic_spawning) then {
 
     diag_log format["SAR_AI: Dynamic spawning definition / adjustments started"];
      
-    // Kamenka, 0 bandit groups, 1 soldier groups, 2 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[0,1,2],[0,100,100],[0,2,1]],"SAR_area_0_0"] call SAR_AI_mon_upd; 
+     // Kamenka, 1 bandit groups, 1 soldier groups, 2 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,1,2],[75,100,100],[2,2,1]],"SAR_area_0_0"] call SAR_AI_mon_upd; 
+
+	// Zeleno1, 2 bandit groups, 0 soldier groups, 2 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[2,0,2],[75,0,100],[2,0,1]],"SAR_area_0_1"] call SAR_AI_mon_upd; 
+
+	// Zeleno2, 1 bandit groups, 0 soldier groups, 2 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,0,2],[75,0,100],[2,0,1]],"SAR_area_1_1"] call SAR_AI_mon_upd;	
+
+	// Gorka, 1 bandit groups, 1 soldier groups, 2 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,1,2],[75,75,100],[2,2,1]],"SAR_area_4_3"] call SAR_AI_mon_upd;	
 
     // Balota, 1 bandit groups, 0 soldier groups, 2 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
     [["max_grps","rnd_grps","max_p_grp"],[[1,0,2],[80,0,80],[2,0,3]],"SAR_area_1_0"] call SAR_AI_mon_upd; 
 
-    // Cherno, 2 bandit groups, 0 soldier groups, 3 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[2,0,3],[75,0,75],[4,0,4]],"SAR_area_2_0"] call SAR_AI_mon_upd; 
+    // Cherno, 1 bandit groups, 1 soldier groups, 3 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,1,3],[75,50,75],[4,4,4]],"SAR_area_2_0"] call SAR_AI_mon_upd; 
 
     // Prido, 1 bandit groups, 0 soldier groups, 3 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
     [["max_grps","rnd_grps","max_p_grp"],[[1,0,3],[50,0,50],[4,0,2]],"SAR_area_3_0"] call SAR_AI_mon_upd; 
 
-    // Elektro, 2 bandit groups, 0 soldier groups, 3 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[2,0,3],[50,0,50],[4,0,4]],"SAR_area_4_0"] call SAR_AI_mon_upd; 
+    // Elektro, 1 bandit groups, 1 soldier groups, 3 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,1,3],[75,50,50],[4,4,4]],"SAR_area_4_0"] call SAR_AI_mon_upd; 
 
     // Kamyshovo, 0 bandit groups, 0 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
     [["max_grps","rnd_grps","max_p_grp"],[[0,0,1],[0,0,80],[0,0,3]],"SAR_area_5_0"] call SAR_AI_mon_upd; 
 
-    // Tulga, 0 bandit groups, 0 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[0,0,1],[0,0,80],[0,0,3]],"SAR_area_5_1"] call SAR_AI_mon_upd; 
+    // Tulga, 1 bandit groups, 0 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,0,1],[75,0,80],[2,0,3]],"SAR_area_5_1"] call SAR_AI_mon_upd; 
 
-    // Solni, 1 bandit groups, 0 soldier groups, 0 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[1,0,0],[80,0,0],[2,0,0]],"SAR_area_5_2"] call SAR_AI_mon_upd; 
+	// SCrappo, 1 bandit groups, 0 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,0,1],[75,0,80],[2,0,3]],"SAR_area_4_1"] call SAR_AI_mon_upd;
 
-    // Berezino, 0 bandit groups, 0 soldier groups, 3 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[0,0,3],[0,0,75],[0,0,3]],"SAR_area_5_3"] call SAR_AI_mon_upd; 
+    // Solni, 1 bandit groups, 0 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,0,1],[50,0,75],[2,0,3]],"SAR_area_5_2"] call SAR_AI_mon_upd; 
 
-    // Khelm, 1 bandit groups, 0 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[1,0,1],[75,0,75],[3,0,3]],"SAR_area_5_4"] call SAR_AI_mon_upd; 
+    // Berezino, 1 bandit groups, 1 soldier groups, 2 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,1,2],[50,75,75],[3,2,3]],"SAR_area_5_3"] call SAR_AI_mon_upd; 
+
+    // Khelm, 1 bandit groups, 2 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,2,1],[75,100,75],[3,3,3]],"SAR_area_5_4"] call SAR_AI_mon_upd; 
+
+	// Vybor, 2 bandit groups, 0 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[2,0,1],[75,0,75],[3,0,3]],"SAR_area_1_3"] call SAR_AI_mon_upd;
+
+	// Gulgo, 1 bandit groups, 0 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,0,1],[75,0,75],[3,0,3]],"SAR_area_3_2"] call SAR_AI_mon_upd;
+
+	// Rogovo, 1 bandit groups, 0 soldier groups, 3 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,0,3],[75,0,75],[3,0,3]],"SAR_area_2_1"] call SAR_AI_mon_upd;
 
     // NEAF, 0 bandit groups, 3 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[0,3,1],[0,50,75],[0,2,4]],"SAR_area_5_5"] call SAR_AI_mon_upd; 
+    [["max_grps","rnd_grps","max_p_grp"],[[0,3,1],[0,100,75],[0,4,4]],"SAR_area_5_5"] call SAR_AI_mon_upd; 
 
-    // NWAF, 0 bandit groups, 2 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[0,2,1],[0,50,75],[0,2,4]],"SAR_area_1_4"] call SAR_AI_mon_upd; 
+    // NWAF, 4 bandit groups, 0 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[4,0,1],[100,0,75],[0,4,4]],"SAR_area_1_4"] call SAR_AI_mon_upd; 
 
-    // Stary, 3 bandit groups, 0 soldier groups, 3 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[3,0,3],[50,0,50],[3,0,3]],"SAR_area_2_2"] call SAR_AI_mon_upd; 
+	// Stary2, 3 bandit groups, 1 soldier groups, 3 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[3,1,3],[75,75,50],[3,2,3]],"SAR_area_2_3"] call SAR_AI_mon_upd;
 
-    // Devils Castle, 2 bandit groups, 0 soldier groups, 0 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[2,0,0],[75,0,0],[3,0,0]],"SAR_area_2_4"] call SAR_AI_mon_upd; 
+    // Stary, 3 bandit groups, 1 soldier groups, 3 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[3,1,3],[75,75,50],[3,2,3]],"SAR_area_2_2"] call SAR_AI_mon_upd; 
+
+    // Devils Castle, 4 bandit groups, 0 soldier groups, 0 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[4,0,0],[100,0,0],[4,0,0]],"SAR_area_2_4"] call SAR_AI_mon_upd; 
 
     // Skalka, 1 bandit groups, 0 soldier groups, 0 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
     [["max_grps","rnd_grps","max_p_grp"],[[1,0,0],[75,0,0],[3,0,0]],"SAR_area_0_5"] call SAR_AI_mon_upd; 
 
-    // Petrovka1, 2 bandit groups, 0 soldier groups, 0 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    // Petrovka1, 1 bandit groups, 0 soldier groups, 0 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
     [["max_grps","rnd_grps","max_p_grp"],[[2,0,0],[75,0,0],[3,0,0]],"SAR_area_1_5"] call SAR_AI_mon_upd; 
 
     // Petrovka2, 2 bandit groups, 0 soldier groups, 0 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
     [["max_grps","rnd_grps","max_p_grp"],[[2,0,0],[75,0,0],[3,0,0]],"SAR_area_2_5"] call SAR_AI_mon_upd; 
 
-    // Pobeda, 2 bandit groups, 0 soldier groups, 0 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[2,0,0],[75,0,0],[3,0,0]],"SAR_area_3_5"] call SAR_AI_mon_upd; 
+    // Pobeda, 1 bandit groups, 1 soldier groups, 0 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,1,0],[75,75,0],[3,3,0]],"SAR_area_3_5"] call SAR_AI_mon_upd; 
 
-    // Krasno, 0 bandit groups, 1 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[0,1,1],[0,75,75],[0,4,2]],"SAR_area_4_5"] call SAR_AI_mon_upd; 
+    // Krasno, 1 bandit groups, 1 soldier groups, 1 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
+    [["max_grps","rnd_grps","max_p_grp"],[[1,1,1],[50,75,75],[2,4,2]],"SAR_area_4_5"] call SAR_AI_mon_upd; 
 
     // test south of lopatino, 1 bandit groups, 0 soldier groups, 0 survivor groups - spawn probability ba,so,su - maximum group members ba,so,su
-    [["max_grps","rnd_grps","max_p_grp"],[[1,0,0],[100,0,0],[6,0,0]],"SAR_area_0_3"] call SAR_AI_mon_upd; 
+    [["max_grps","rnd_grps","max_p_grp"],[[1,0,0],[100,0,0],[6,0,0]],"SAR_area_0_3"] call SAR_AI_mon_upd;  
 
     diag_log format["SAR_AI: Dynamic spawning definition / adjustments finished"];
 
@@ -149,6 +177,24 @@ _this setMarkerBrush "Solid";
 _this setMarkerSize [6500, 1200];
 SAR_marker_helipatrol_southcoast = _this;
 
+// southcoast, mil.veh patrol area
+_this = createMarker ["SAR_marker_veh_milsouth", [4138.2783, 2772.626]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [4000, 700];
+SAR_marker_veh_milsouth = _this;
+
+// southcoast, surv.veh patrol area
+_this = createMarker ["SAR_marker_veh_endurance", [8479.7021, 2592.4033]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [6000, 700];
+SAR_marker_veh_endurance = _this;
+
 // eastcoast, heli patrol area
 _this = createMarker ["SAR_marker_helipatrol_eastcoast", [13304.196, 8220.9795]];
 _this setMarkerShape "RECTANGLE";
@@ -157,6 +203,15 @@ _this setMarkerType "Flag";
 _this setMarkerBrush "Solid";
 _this setMarkerSize [1200, 6000];
 SAR_marker_helipatrol_eastcoast = _this;
+
+//MilNorth Vehicle Patrol
+_this = createMarker ["SAR_marker_veh_milnorth", [12601.175, 8510.0527]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [500, 4000];
+SAR_marker_veh_milnorth = _this;
 
 // NWAF, heli patrol area
 _this = createMarker ["SAR_marker_helipatrol_nwaf", [4525.3335, 10292.299]];
@@ -168,6 +223,36 @@ _this setMarkerSize [1500, 500];
 _this setMarkerDir 59.354115;
 SAR_marker_helipatrol_nwaf = _this;
 
+//NWAF1, vehicle patrol
+_this = createMarker ["SAR_marker_veh_nwaf1", [4402.835, 10505.754]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [750, 300];
+_this setMarkerDir 59.354115;
+SAR_marker_veh_nwaf1 = _this;
+
+//NWAF2, vehicle patrol
+_this = createMarker ["SAR_marker_veh_nwaf2", [4639.1455, 10100.637]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [750, 300];
+_this setMarkerDir 59.354115;
+SAR_marker_veh_nwaf2 = _this;
+
+//NWAF3, vehicle patrol
+_this = createMarker ["SAR_marker_veh_nwaf3", [4525.3335, 10292.299]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [1500, 500];
+_this setMarkerDir 59.354115;
+SAR_marker_veh_nwaf3 = _this;
+
 // NEAF, heli patrol area
 _this = createMarker ["SAR_marker_helipatrol_neaf", [12034.16, 12725.376, 0]];
 _this setMarkerShape "RECTANGLE";
@@ -177,13 +262,30 @@ _this setMarkerBrush "Solid";
 _this setMarkerSize [1000, 600];
 SAR_marker_helipatrol_neaf = _this;
 
+//NEAF, vehicle patrol area
+this = createMarker ["SAR_marker_veh_neaf", [12034.16, 12725.376, 0]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [600, 600];
+SAR_marker_veh_neaf = _this;
+
+//NEAF, soldier patrol
+this = createMarker ["SAR_marker_traffiq_neaf", [12034.16, 12725.376, 0]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [200, 200];
+SAR_marker_traffiq_neaf = _this;
 
 _this = createMarker ["SAR_marker_DEBUG_veh", [1951.4304, 11905.569]];
 _this setMarkerShape "RECTANGLE";
 _this setMarkeralpha 0;
 _this setMarkerType "Flag";
 _this setMarkerBrush "Solid";
-_this setMarkerSize [300, 1000];
+_this setMarkerSize [1000, 1000];
 _this setMarkerDir -19.085985;
 SAR_marker_DEBUG_veh = _this;
 
@@ -194,6 +296,77 @@ _this setMarkerType "Flag";
 _this setMarkerBrush "Solid";
 _this setMarkerSize [10, 10];
 SAR_marker_DEBUG_devilscastle = _this;
+
+// Devil's Castle Heli Patrol
+_this = createMarker ["SAR_marker_helipatrol_devilscastle", [6913.47,11437.2,0]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [700, 700];
+SAR_marker_helipatrol_devilscastle = _this;
+
+_this = createMarker ["SAR_marker_traffiq_factorynearPolana", [11400,7560,0.001]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [10, 10];
+SAR_marker_traffiq_factorynearPolana = _this;
+
+//Camp Endurance Squad
+_this = createMarker ["SAR_marker_traffiq_endurance", [8479.7021, 2592.4033]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [15, 15];
+SAR_marker_traffiq_endurance = _this;
+
+//Milsouth Squad
+_this = createMarker ["SAR_marker_traffiq_milsouth", [4138.2783, 2772.626]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [10, 10];
+SAR_marker_traffiq_milsouth = _this;
+
+//Milnorth Squad
+_this = createMarker ["SAR_marker_traffiq_milnorth", [12601.175, 8510.0527]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [10, 10];
+SAR_marker_traffiq_milnorth = _this;
+
+//NWairfield Patrol1
+_this = createMarker ["SAR_marker_traffiq_nwAirfield1", [4402.835, 10505.754,0.001]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [50, 50];
+SAR_marker_traffiq_nwAirfield1 = _this;
+
+//NWairfield Patrol2
+_this = createMarker ["SAR_marker_traffiq_nwAirfield2", [4639.1455, 10100.637,0.001]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [50, 50];
+SAR_marker_traffiq_nwAirfield2 = _this;
+
+//NWairfield Patrol3
+_this = createMarker ["SAR_marker_traffiq_nwAirfield3", [4705.9155, 10305.58,0.001]];
+_this setMarkerShape "RECTANGLE";
+_this setMarkeralpha 0;
+_this setMarkerType "Flag";
+_this setMarkerBrush "Solid";
+_this setMarkerSize [300, 150];
+SAR_marker_traffiq_nwAirfield3 = _this;
 
 diag_log format["SAR_AI: Static spawning area definition finished"];
 
@@ -240,14 +413,18 @@ diag_log format["SAR_AI: Static Spawning for Helicopter patrols started"];
 //
 
  //Heli Patrol NWAF
-[SAR_marker_helipatrol_nwaf,1,true] call SAR_AI_heli;
+[SAR_marker_helipatrol_nwaf,3,true] call SAR_AI_heli;
+[SAR_marker_helipatrol_nwaf,3,true] call SAR_AI_heli;
 
 //Heli Patrol NEAF
 [SAR_marker_helipatrol_neaf,1,true] call SAR_AI_heli;
 
 // Heli patrol south coast
-[SAR_marker_helipatrol_southcoast,1,true] call SAR_AI_heli;
-[SAR_marker_helipatrol_southcoast,1,true] call SAR_AI_heli;
+[SAR_marker_helipatrol_southcoast,3,true] call SAR_AI_heli;
+[SAR_marker_helipatrol_southcoast,3,true] call SAR_AI_heli;
+
+// Heli Patrol Devil's Castle
+[SAR_marker_helipatrol_devilscastle,3,true] call SAR_AI_heli;
 
 // heli patrol east coast
 [SAR_marker_helipatrol_eastcoast,1,true] call SAR_AI_heli;
@@ -255,10 +432,8 @@ diag_log format["SAR_AI: Static Spawning for Helicopter patrols started"];
 
 
 // example war scenario in the northwest. Comment OUT after having had a look at it!
-[SAR_marker_DEBUG_veh,1,true,30] call SAR_AI_heli;
-[SAR_marker_DEBUG_veh,1,true,30] call SAR_AI_heli;
 [SAR_marker_DEBUG_veh,3,true,30] call SAR_AI_heli;
-[SAR_marker_DEBUG_veh,3,true,30] call SAR_AI_heli;
+//[SAR_marker_DEBUG_veh,1,true,30] call SAR_AI_heli;
 
 
 diag_log format["SAR_AI: Static Spawning for Helicopter patrols finished"];
@@ -305,11 +480,20 @@ diag_log format["SAR_AI: Static Spawning for infantry patrols started"];
 // define your static infantry patrols here
 //
 
-[SAR_marker_DEBUG_devilscastle,1,0,6,"fortify",true] call SAR_AI;
+[SAR_marker_DEBUG_devilscastle,3,1,6,"fortify",true,600] call SAR_AI;
+[SAR_marker_traffiq_factorynearPolana,3,1,3,"ambush",true,300] call SAR_AI;
+[SAR_marker_traffiq_nwAirfield1,3,2,6,"fortify",true,600] call SAR_AI;
+[SAR_marker_traffiq_nwAirfield2,3,2,6,"fortify",true,600] call SAR_AI;
+[SAR_marker_traffiq_nwAirfield3,3,2,6,"patrol",true,600] call SAR_AI;
+[SAR_marker_traffiq_neaf,1,2,6,"fortify",true,600] call SAR_AI;
+[SAR_marker_traffiq_milnorth,1,1,3,"fortify",true,600] call SAR_AI;
+[SAR_marker_traffiq_milsouth,1,2,3,"fortify",true,600] call SAR_AI;
+[SAR_marker_traffiq_endurance,2,2,6,"fortify",true,300] call SAR_AI;
+
 
 // example war scenario in the northwest. Comment OUT after having had a look at it!
-[SAR_marker_DEBUG_veh,1,0,9,"patrol",true] call SAR_AI;
-[SAR_marker_DEBUG_veh,2,0,9,"patrol",true] call SAR_AI;
+//[SAR_marker_DEBUG_veh,1,0,9,"patrol",true] call SAR_AI;
+//[SAR_marker_DEBUG_veh,2,0,9,"patrol",true] call SAR_AI;
 [SAR_marker_DEBUG_veh,3,0,9,"patrol",true] call SAR_AI;
 [SAR_marker_DEBUG_veh,3,0,9,"patrol",true] call SAR_AI;
  
@@ -353,7 +537,7 @@ diag_log format["SAR_AI: Static Spawning for infantry patrols finished"];
         [
             SAR_marker_DEBUG_veh_1,             // Name of the area that the vehicle patrol will spawn in
             1,                                  // type of group
-            ["UAZ_Unarmed_TK_EP1"],              // used vehicle
+            ["UAZ_Unarmed_TK_EP1"],             // used vehicle
             [[1,1,1]],                          // Vehicle initial crews
             true,                               // if this group should respawn or not
             60                                  // waittime until this group will respawn            
@@ -368,33 +552,78 @@ diag_log format["SAR_AI: Static Spawning for vehicle patrols started"];
 //
 
 // example war scenario in the northwest. Comment OUT after having had a look at it!
+
 [
-    SAR_marker_DEBUG_veh,                           // Name of the area that the vehicle patrol will spawn in
-    1,                                              // type of group
-    ["LandRover_CZ_EP1","M1030","M1030","LandRover_CZ_EP1"],        // used vehicle
+    SAR_marker_DEBUG_veh,                           				// Name of the area that the vehicle patrol will spawn in
+    3,                                              				// type of group
+    ["LandRover_MG_TK_INS_EP1","TT650_Ins","TT650_Gue"],        // used vehicle
     [[1,1,1],[0,1,1],[0,1,1],[0,1,1]],                              // Vehicle initial crew
-    true,                                           // if this group should respawn or not
-    10
+    true,                                           				// if this group should respawn or not
+    60
 ] call SAR_AI_land;
 
 [
-    SAR_marker_DEBUG_veh,                   // Name of the area that the vehicle patrol will spawn in
-    3,                                      // type of group
-    ["M1030","M1030","M1030","M1030"],      // used vehicle
-    [[1,1,0],[0,1,1],[0,1,1],[0,1,1]],      // Vehicle initial crew
-    true,                                   // if this group should respawn or not
-    60                                      // waittime until this group will respawn
+    SAR_marker_veh_nwaf3,                           				// Name of the area that the vehicle patrol will spawn in
+    3,                                              				// type of group
+    ["Pickup_PK_INS","TT650_Gue","TT650_TK_CIV_EP1"],        						// used vehicle
+    [[1,1,1],[0,1,1],[0,1,1]],                              		// Vehicle initial crew
+    true,                                           				// if this group should respawn or not
+    1800
 ] call SAR_AI_land;
 
 [
-    SAR_marker_DEBUG_veh,             // Name of the area that the vehicle patrol will spawn in
+    SAR_marker_veh_nwaf1,                           				// Name of the area that the vehicle patrol will spawn in
+    3,                                              				// type of group
+    ["LandRover_MG_TK_INS_EP1","TT650_Gue","TT650_TK_CIV_EP1"],        						// used vehicle
+    [[1,1,1],[0,1,1],[0,1,1]],                              		// Vehicle initial crew
+    true,                                           				// if this group should respawn or not
+    1800
+] call SAR_AI_land;
+
+[
+    SAR_marker_veh_nwaf2,                           				// Name of the area that the vehicle patrol will spawn in
+    3,                                              				// type of group
+    ["UAZ_MG_TK_EP1","TT650_Gue","TT650_TK_CIV_EP1"],        						// used vehicle
+    [[1,1,1],[0,1,1],[0,1,1]],                              		// Vehicle initial crew
+    true,                                           				// if this group should respawn or not
+    1800
+] call SAR_AI_land;
+
+[
+    SAR_marker_veh_neaf,               // Name of the area that the vehicle patrol will spawn in
+    1,                                  // type of group
+    ["HMMWV_Armored"],                  // used vehicle
+    [[1,1,1]],                          // Vehicle initial crew
+    true,                               // if this group should respawn or not
+    600                                  // waittime until this group will respawn
+] call SAR_AI_land; 
+
+[
+    SAR_marker_veh_milnorth,               // Name of the area that the vehicle patrol will spawn in
+    1,                                  // type of group
+    ["HMMWV_Armored"],                  // used vehicle
+    [[1,1,1]],                          // Vehicle initial crew
+    true,                               // if this group should respawn or not
+    60                                  // waittime until this group will respawn
+] call SAR_AI_land;
+
+[
+    SAR_marker_veh_endurance,               // Name of the area that the vehicle patrol will spawn in
     2,                                  // type of group
-    ["M1030"],                          // used vehicle
-    [[1,1,0]],                          // Vehicle initial crew
+    ["LandRover_Special_CZ_EP1","M1030"],                  // used vehicle
+    [[1,1,1],[0,1,1]],                          // Vehicle initial crew
+    true,                               // if this group should respawn or not
+    60                                  // waittime until this group will respawn
+] call SAR_AI_land; 
+
+[
+    SAR_marker_veh_milsouth,               // Name of the area that the vehicle patrol will spawn in
+    1,                                  // type of group
+    ["HMMWV_Armored"],                  // used vehicle
+    [[1,1,1]],                          // Vehicle initial crew
     true,                               // if this group should respawn or not
     60                                  // waittime until this group will respawn
 ] call SAR_AI_land;
 
 diag_log format["SAR_AI: Static Spawning for vehicle patrols finished"];
 // ---- end of configuration area ----
-
