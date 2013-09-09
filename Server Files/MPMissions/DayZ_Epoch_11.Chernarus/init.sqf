@@ -97,6 +97,8 @@ if (isServer) then {
 	// Add trader citys
 	_nil = [] execVM "mission.sqf";
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
+	//Bus Route
+	[true] execVM "Plugins\busroute\init_bus.sqf";
 };
 
 if (!isDedicated) then {
@@ -110,6 +112,8 @@ if (!isDedicated) then {
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
 	_void = [] execVM "R3F_Realism\R3F_Realism_Init.sqf";
+	//Bus Route
+	[] execVM "Plugins\busroute\player_axeBus.sqf";
 };
 #include "\z\addons\dayz_code\system\REsec.sqf"
 
