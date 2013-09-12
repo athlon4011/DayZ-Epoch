@@ -148,5 +148,16 @@ class DayZ_loadingScreen
 		};
 	};
 };
+class CfgSounds
+{
+    sounds[] = {};
+ 
+    class playerSnoring
+    {
+    name="playerSnoring";
+    sound[]={\Plugins\tentsleep\snoring.ogg,0.9,1};
+    titles[] = {};
+    };
+};
 #include "Plugins\traders\dialog.hpp"
 #include "Plugins\sarge\SARGE\SAR_define.hpp"
