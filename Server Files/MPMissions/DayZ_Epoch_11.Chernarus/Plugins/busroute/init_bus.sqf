@@ -109,7 +109,7 @@
 		_axeBusGroup selectLeader _axeBusUnit;
 		_axeBusDriver = _axeBusUnit;
 		_axeBusDriver addEventHandler ["HandleDamage", {false}];
-		_axeBus addEventHandler ["killed", {[false] execVM "busroute\init_bus.sqf"}];//Shouldn't be required
+		_axeBus addEventHandler ["killed", {[false] execVM "Plugins\busroute\init_bus.sqf"}];//Shouldn't be required
 		
 		//Test - Allow dev time to get in bus
 		sleep 36;

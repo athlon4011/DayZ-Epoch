@@ -23,7 +23,19 @@ sleep 5;
 [_coords,80,4,2,1] execVM "\z\addons\dayz_server\missions\add_unit_server2.sqf";//AI Guards
 sleep 1;
 
-waitUntil{({alive _x} count (units SniperTeam)) < 1};
+
+
+if{({alive _x} count (units SniperTeam)) < 1} then {
+	sleep 30;
+	[] execVM "debug\remmarkers.sqf";
+	[] execVM "debug\addmarkers.sqf";
+	[nil,nil,rTitleText,"A mission is still active! Check your map for the location!", "PLAIN",10] call RE;
+} else {
+sleep 30;
+	[nil,nil,rTitleText,"Script Failure", "PLAIN",10] call RE;
+};
+FNC_checkdone = {({alive _x} count (units SniperTeam)) < 1};
+waitUntil{call FNC_checkdone}; 
 
 [nil,nil,rTitleText,"The hunting party has been wiped out!", "PLAIN",6] call RE;
 

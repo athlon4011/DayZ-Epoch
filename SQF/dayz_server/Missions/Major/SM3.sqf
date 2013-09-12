@@ -37,7 +37,18 @@ sleep 5;
 _aispawn = [_coords,40,4,3,1] execVM "\z\addons\dayz_server\missions\add_unit_server.sqf";//AI Guards
 
 
-waitUntil{{isPlayer _x && _x distance _baserunover < 10  } count playableunits > 0}; 
+
+if{{isPlayer _x && _x distance _baserunover < 10  } count playableunits > 0} then {
+	sleep 30;
+	[] execVM "debug\remmarkers.sqf";
+	[] execVM "debug\addmarkers.sqf";
+	[nil,nil,rTitleText,"A mission is still active! Check your map for the location!", "PLAIN",10] call RE;
+} else {
+sleep 30;
+	[nil,nil,rTitleText,"Script Failure", "PLAIN",10] call RE;
+};
+FNC_checkdone = {{isPlayer _x && _x distance _baserunover < 10  } count playableunits > 0};
+waitUntil{call FNC_checkdone}; 
 
 [nil,nil,rTitleText,"Survivors have taken control of the camp and medical supplies.", "PLAIN",6] call RE;
 

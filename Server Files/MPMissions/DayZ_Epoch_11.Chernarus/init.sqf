@@ -98,7 +98,7 @@ if (isServer) then {
 	_nil = [] execVM "mission.sqf";
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
 	//Bus Route
-	[true] execVM "Plugins\busroute\init_bus.sqf";
+	//[true] execVM "Plugins\busroute\init_bus.sqf";
 };
 
 if (!isDedicated) then {
@@ -113,10 +113,12 @@ if (!isDedicated) then {
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
 	_void = [] execVM "R3F_Realism\R3F_Realism_Init.sqf";
 	//Bus Route
-	[] execVM "Plugins\busroute\player_axeBus.sqf";
+	//[] execVM "Plugins\busroute\player_axeBus.sqf";
 };
 #include "\z\addons\dayz_code\system\REsec.sqf"
 
+
+sleep 5;
 // Load Bases
    [] ExecVM "Maps\Sobor_Hospital.sqf"; // Activation
    [] execVM "Maps\villages.sqf"; //Epoch Villages - By Bungle (ON)
@@ -147,7 +149,6 @@ if (!isDedicated) then {
    [] ExecVM "Maps\novylugmedcheck.sqf"; // Activation
    [] execVM "Maps\sectorfng\sectorfng_init.sqf";
 
-sleep 20;
 //////////BUILDINGS//////////
 [] execVM "Maps\buildings\lopatino.sqf";
 [] execVM "Maps\buildings\NovyLugBase.sqf";
@@ -161,3 +162,6 @@ call compile preprocessFileLineNumbers "Plugins\sarge\UPSMON\scripts\Init_UPSMON
 call compile preprocessfile "Plugins\sarge\SHK_pos\shk_pos_init.sqf";
 // run SAR_AI
 [] execVM "Plugins\sarge\SARGE\SAR_AI_init.sqf";
+
+// CPC Nametags
+[] execVM "Plugins\nametags\cpcnametags.sqf";

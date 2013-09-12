@@ -49,7 +49,18 @@ sleep 3;
 sleep 3;
 
 
-waitUntil{{isPlayer _x && _x distance _baserunover < 5  } count playableunits > 0}; 
+
+if{{isPlayer _x && _x distance _baserunover < 5  } count playableunits > 0} then {
+	sleep 30;
+	[] execVM "debug\remmarkers.sqf";
+	[] execVM "debug\addmarkers.sqf";
+	[nil,nil,rTitleText,"A mission is still active! Check your map for the location!", "PLAIN",10] call RE;
+} else {
+sleep 30;
+	[nil,nil,rTitleText,"Script Failure", "PLAIN",10] call RE;
+};
+FNC_checkdone = {{isPlayer _x && _x distance _baserunover < 5  } count playableunits > 0};
+waitUntil{call FNC_checkdone}; 
 
 [nil,nil,rTitleText,"The Medical Outpost is under survivor control!", "PLAIN",6] call RE;
 

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- GENERATED AUTOMATICALLY BY VERT HOSTING -->
+<BEAdmins>
+    <admin id="0">
+		<name>Scenekicks</name>
+		<guid>7a8f458b7d790ebc467b22a2ec8fffb9</guid>
+		<group>0</group>
+		<groupname>Super Admin</groupname>
+	</admin>
+</BEAdmins>
