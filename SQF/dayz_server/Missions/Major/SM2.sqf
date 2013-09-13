@@ -40,8 +40,10 @@ sleep 5;
 _aispawn = [[(_coords select 0) + 30, _coords select 1,0],40,4,4,1] execVM "\z\addons\dayz_server\missions\add_unit_server.sqf";//AI Guards
 
 
-
-if{{isPlayer _x && _x distance _c130wreck < 5 } count playableunits > 0} then {
+sleep 30;
+[nil,nil,rTitleText,"Pre-Test", "PLAIN",10] call RE;
+_testvar = 1;
+if{_testvar == 1} then {
 	sleep 30;
 	[] execVM "debug\remmarkers.sqf";
 	[] execVM "debug\addmarkers.sqf";
@@ -50,8 +52,10 @@ if{{isPlayer _x && _x distance _c130wreck < 5 } count playableunits > 0} then {
 sleep 30;
 	[nil,nil,rTitleText,"Script Failure", "PLAIN",10] call RE;
 };
-FNC_checkdone = {{isPlayer _x && _x distance _c130wreck < 5 } count playableunits > 0};
-waitUntil{call FNC_checkdone};  
+sleep 30;
+[nil,nil,rTitleText,"Post-Test", "PLAIN",10] call RE;
+
+waitUntil{{isPlayer _x && _x distance _c130wreck < 5 } count playableunits > 0};  
 
 [] execVM "debug\remmarkers.sqf";
 MissionGo = 0;

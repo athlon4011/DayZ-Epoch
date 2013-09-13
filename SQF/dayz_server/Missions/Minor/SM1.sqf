@@ -24,8 +24,10 @@ sleep 5;
 sleep 1;
 
 
-
-if{({alive _x} count (units SniperTeam)) < 1} then {
+sleep 30;
+[nil,nil,rTitleText,"Pre-Test", "PLAIN",10] call RE;
+_testvar = 1;
+if{_testvar == 1} then {
 	sleep 30;
 	[] execVM "debug\remmarkers.sqf";
 	[] execVM "debug\addmarkers.sqf";
@@ -34,8 +36,10 @@ if{({alive _x} count (units SniperTeam)) < 1} then {
 sleep 30;
 	[nil,nil,rTitleText,"Script Failure", "PLAIN",10] call RE;
 };
-FNC_checkdone = {({alive _x} count (units SniperTeam)) < 1};
-waitUntil{call FNC_checkdone}; 
+sleep 30;
+[nil,nil,rTitleText,"Post-Test", "PLAIN",10] call RE;
+
+waitUntil{({alive _x} count (units SniperTeam)) < 1}; 
 
 [nil,nil,rTitleText,"The hunting party has been wiped out!", "PLAIN",6] call RE;
 
