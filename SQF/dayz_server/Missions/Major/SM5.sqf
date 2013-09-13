@@ -4,7 +4,7 @@ private ["_coords","_MainMarker","_chopper","_wait"];
 [] execVM "\z\addons\dayz_server\Missions\SMGoMajor.sqf";
 WaitUntil {MissionGo == 1};
 
-_coords = [getMarkerPos "center",0,5500,30,0,20,0] call BIS_fnc_findSafePos;
+_coords = [getMarkerPos "center",0,5500,250,0,20,0] call BIS_fnc_findSafePos;
 
 [nil,nil,rTitleText,"Bandits have destroyed a Ural carrying medical supplies and are securing the cargo! Check your map for the location!", "PLAIN",10] call RE;
 
@@ -31,22 +31,6 @@ _aispawn = [_coords,80,6,6,1] execVM "\z\addons\dayz_server\missions\add_unit_se
 sleep 5;
 _aispawn = [_coords,40,4,6,1] execVM "\z\addons\dayz_server\missions\add_unit_server.sqf";//AI Guards
 sleep 5;
-
-
-sleep 30;
-[nil,nil,rTitleText,"Pre-Test", "PLAIN",10] call RE;
-_testvar = 1;
-if{_testvar == 1} then {
-	sleep 30;
-	[] execVM "debug\remmarkers.sqf";
-	[] execVM "debug\addmarkers.sqf";
-	[nil,nil,rTitleText,"A mission is still active! Check your map for the location!", "PLAIN",10] call RE;
-} else {
-sleep 30;
-	[nil,nil,rTitleText,"Script Failure", "PLAIN",10] call RE;
-};
-sleep 30;
-[nil,nil,rTitleText,"Post-Test", "PLAIN",10] call RE;
 
 waitUntil{{isPlayer _x && _x distance _uralcrash < 5  } count playableunits > 0};  
 

@@ -895,3 +895,23 @@ if ( _canPress ) then {
         s_player_pressDMR = -1;
     };    
 // AMMO PRESS OFF    
+
+// ---------------------------------------SUICIDE START------------------------------------
+ 
+private ["_handGun"];
+_handGun = currentWeapon player;
+if ((_handGun in ["glock17_EP1","M9","M9SD","Makarov","MakarovSD","revolver_EP1","UZI_EP1","Sa61_EP1","Colt1911"]) && (player ammo _handGun > 0)) then {
+    hasSecondary = true;
+} else {
+    hasSecondary = false;
+};
+if((speed player <= 1) && hasSecondary && _canDo) then {
+    if (s_player_suicide < 0) then {
+        s_player_suicide = player addaction[("<t color=""#ff0000"">" + ("Commit Suicide") +"</t>"),"Plugins\suicide\suicide.sqf",_handGun,0,false,true,"", ""];
+    };
+} else {
+    player removeAction s_player_suicide;
+    s_player_suicide = -1;
+};
+ 
+// ---------------------------------------SUICIDE END------------------------------------
