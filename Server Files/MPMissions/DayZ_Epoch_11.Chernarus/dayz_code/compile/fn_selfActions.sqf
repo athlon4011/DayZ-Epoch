@@ -841,3 +841,57 @@ if (_dogHandle > 0) then {
 	player removeAction s_player_calldog;
 	s_player_calldog = 		-1;
 };
+
+// AMMO PRESS ON
+private["_playerPosX","_playerPosY","_playerPosZ","_canPress"];
+ 
+_playerPosX = getPosASL player select 0;
+_playerPosY = getPosASL player select 1;
+_playerPosZ = getPosASL player select 2;
+_canPress = _playerPosX > 10410 and _playerPosX < 10412 and _playerPosY > 2596 and _playerPosY < 2598 and _playerPosZ > 29 and _playerPosZ < 30;
+ 
+if ( _canPress ) then {
+            if (s_player_pressstn < 0) then {
+            s_player_pressstn = player addAction ["Activate Ammo Press (STNAG Mags)","Plugins\ammopress\stnagmag.sqf",cursorTarget, 5, false, true, "",""];
+        };
+    } else {
+        player removeAction s_player_pressstn;
+        s_player_pressstn = -1;
+    };
+
+if ( _canPress ) then {    
+            if (s_player_pressfn < 0) then {
+            s_player_pressfn = player addAction ["Activate Ammo Press (FAL Mags)","Plugins\ammopress\fnmag.sqf",cursorTarget, 5, false, true, "",""];
+        };
+    } else {
+        player removeAction s_player_pressfn;
+        s_player_pressfn = -1;
+    };
+    
+if ( _canPress ) then {    
+            if (s_player_pressAKM < 0) then {
+            s_player_pressAKM = player addAction ["Activate Ammo Press (AKM Mags)","Plugins\ammopress\AKMMag.sqf",cursorTarget, 5, false, true, "",""];
+        };
+    } else {
+        player removeAction s_player_pressAKM;
+        s_player_pressAKM = -1;
+    };
+
+if ( _canPress ) then {        
+            if (s_player_pressAK < 0) then {
+            s_player_pressAK = player addAction ["Activate Ammo Press (AK Mags)","Plugins\ammopress\AKMag.sqf",cursorTarget, 5, false, true, "",""];
+        };
+    } else {
+        player removeAction s_player_pressAK;
+        s_player_pressAK = -1;
+    };
+
+if ( _canPress ) then {    
+            if (s_player_pressDMR < 0) then {
+            s_player_pressDMR = player addAction ["Activate Ammo Press (DMR Mags)","Plugins\ammopress\DMRmag.sqf",cursorTarget, 5, false, true, "",""];
+        };
+    } else {
+        player removeAction s_player_pressDMR;
+        s_player_pressDMR = -1;
+    };    
+// AMMO PRESS OFF    
