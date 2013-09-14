@@ -120,45 +120,7 @@ if (!isDedicated) then {
 };
 #include "\z\addons\dayz_code\system\REsec.sqf"
 
-
 sleep 5;
-// Load Bases
-   [] ExecVM "Maps\Sobor_Hospital.sqf"; // Activation
-   [] execVM "Maps\villages.sqf"; //Epoch Villages - By Bungle (ON)
-   [] execVM "Maps\raceday.sqf"; //Coastal Race Day - By Bungle (ON)
-   [] ExecVM "Maps\Airtrip_Camp.sqf"; // Activation
-   [] ExecVM "Maps\Barrage_Dan.sqf"; // Activation
-   [] ExecVM "Maps\BlackLac_Dan.sqf"; // Activation
-   [] ExecVM "Maps\Bois1_Dan.sqf"; // Activation
-   [] ExecVM "Maps\DeadCastle_Dan.sqf"; // Activation
-   [] ExecVM "Maps\Dubrovka_Detruit.sqf"; // Activation
-   [] ExecVM "Maps\LieuxditPenduAto.sqf"; // Activation
-   [] ExecVM "Maps\oilfieldsbase.sqf"; // Activation
-   [] ExecVM "Maps\balota.sqf"; // Activation
-   [] ExecVM "Maps\berezino.sqf"; // Activation
-   [] ExecVM "Maps\cherno_base.sqf"; // Activation
-   [] ExecVM "Maps\dichina.sqf"; // Activation
-   [] ExecVM "Maps\last_stand.sqf"; // Activation
-   [] ExecVM "Maps\ne_airstrip.sqf"; // Activation
-   [] ExecVM "Maps\nw_airstrip.sqf"; // Activation
-   [] ExecVM "Maps\NovyLugBase.sqf"; // Activation
-   [] ExecVM "Maps\lopatino.sqf"; // Activation
-   [] ExecVM "Maps\excelsior.sqf"; // Activation
-   [] ExecVM "Maps\train_wreck.sqf"; // Activation
-   [] ExecVM "Maps\kamenka_v2.sqf"; // Activation
-   [] ExecVM "Maps\devils_castle_outpot.sqf"; // Activation
-   [] ExecVM "Maps\chenaid.sqf"; // Activation
-   [] ExecVM "Maps\skacast.sqf"; // Activation
-   [] ExecVM "Maps\novylugmedcheck.sqf"; // Activation
-   [] execVM "Maps\sectorfng\sectorfng_init.sqf";
-
-//////////BUILDINGS//////////
-[] execVM "Maps\buildings\lopatino.sqf";
-[] execVM "Maps\buildings\NovyLugBase.sqf";
-[] execVM "Maps\buildings\wtf_base.sqf";
-[] execVM "Maps\buildings\bandits.sqf";
-[] ExecVM "Maps\buildings\devfish_camptents.sqf";
-
 // UPSMON
 call compile preprocessFileLineNumbers "Plugins\sarge\UPSMON\scripts\Init_UPSMON.sqf";
 // SHK 

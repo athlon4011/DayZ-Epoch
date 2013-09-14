@@ -29,6 +29,43 @@ fnc_plyrHit   = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile
 server_deaths = 			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerDeaths.sqf";
 
 
+// Load Bases
+   [] ExecVM "\z\addons\dayz_server\Maps\Sobor_Hospital.sqf"; // Activation
+   [] execVM "\z\addons\dayz_server\Maps\villages.sqf"; //Epoch Villages - By Bungle (ON)
+   [] execVM "\z\addons\dayz_server\Maps\raceday.sqf"; //Coastal Race Day - By Bungle (ON)
+   [] ExecVM "\z\addons\dayz_server\Maps\Airtrip_Camp.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\Barrage_Dan.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\BlackLac_Dan.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\Bois1_Dan.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\DeadCastle_Dan.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\Dubrovka_Detruit.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\LieuxditPenduAto.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\oilfieldsbase.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\balota.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\berezino.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\cherno_base.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\dichina.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\last_stand.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\ne_airstrip.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\nw_airstrip.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\NovyLugBase.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\lopatino.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\excelsior.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\train_wreck.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\kamenka_v2.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\devils_castle_outpot.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\chenaid.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\skacast.sqf"; // Activation
+   [] ExecVM "\z\addons\dayz_server\Maps\novylugmedcheck.sqf"; // Activation
+   [] execVM "\z\addons\dayz_server\Maps\sectorfng\sectorfng_init.sqf";
+
+//////////BUILDINGS//////////
+[] execVM "\z\addons\dayz_server\Maps\buildings\lopatino.sqf";
+[] execVM "\z\addons\dayz_server\Maps\buildings\NovyLugBase.sqf";
+[] execVM "\z\addons\dayz_server\Maps\buildings\wtf_base.sqf";
+[] execVM "\z\addons\dayz_server\Maps\buildings\bandits.sqf";
+[] ExecVM "\z\addons\dayz_server\Maps\buildings\devfish_camptents.sqf";
+
 vehicle_handleInteract = {
 	private["_object"];
 	_object = _this select 0;
