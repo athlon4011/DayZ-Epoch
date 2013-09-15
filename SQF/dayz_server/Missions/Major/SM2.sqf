@@ -10,7 +10,7 @@ _coords = [getMarkerPos "center",0,5500,250,0,20,0] call BIS_fnc_findSafePos;
 
 Ccoords = _coords;
 publicVariable "Ccoords";
-[] execVM "debug\addmarkers.sqf";
+[] execVM "\z\addons\dayz_server\debug\addmarkers.sqf";
 
 _c130wreck = createVehicle ["C130J_wreck_EP1",[(_coords select 0) + 30, (_coords select 1) - 5,0],[], 0, "NONE"];
 _hummer = createVehicle ["HMMWV_DZ",[(_coords select 0) - 20, (_coords select 1) - 5,0],[], 0, "CAN_COLLIDE"];
@@ -31,6 +31,9 @@ _crate2 = createVehicle ["USLaunchersBox",[(_coords select 0) - 6, _coords selec
 [_crate2] execVM "\z\addons\dayz_server\missions\misc\fillBoxesS.sqf";
 _crate2 setVariable ["Sarge",1,true];
 
+sleep 15;
+[nil,nil,rTitleText,"Coords0:" && (_coords select 0) && "  Coords1:" && (_coords select 1), "PLAIN",6] call RE;
+
 _aispawn = [[(_coords select 0) + 20, _coords select 1,0],80,6,6,1] execVM "\z\addons\dayz_server\missions\add_unit_server.sqf";//AI Guards
 sleep 5;
 _aispawn = [[(_coords select 0) + 30, _coords select 1,0],80,6,6,1] execVM "\z\addons\dayz_server\missions\add_unit_server.sqf";//AI Guards
@@ -41,7 +44,7 @@ _aispawn = [[(_coords select 0) + 30, _coords select 1,0],40,4,4,1] execVM "\z\a
 
 waitUntil{{isPlayer _x && _x distance _c130wreck < 5 } count playableunits > 0};  
 
-[] execVM "debug\remmarkers.sqf";
+[] execVM "\z\addons\dayz_server\debug\remmarkers.sqf";
 MissionGo = 0;
 Ccoords = 0;
 publicVariable "Ccoords";

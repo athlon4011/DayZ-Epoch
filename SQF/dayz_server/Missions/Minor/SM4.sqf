@@ -10,7 +10,7 @@ _coords = [getMarkerPos "center",0,5500,250,0,20,0] call BIS_fnc_findSafePos;
 
 MCoords = _coords;
 publicVariable "MCoords";
-[] execVM "debug\addmarkers75.sqf";
+[] execVM "\z\addons\dayz_server\debug\addmarkers75.sqf";
 
 _chopcrash = createVehicle ["UH60Wreck_DZ",_coords,[], 0, "CAN_COLLIDE"];
 _chopcrash setVariable ["Sarge",1,true];
@@ -24,11 +24,14 @@ sleep 1;
 [_coords,40,4,3,1] execVM "\z\addons\dayz_server\missions\add_unit_server.sqf";//AI Guards
 sleep 1;
 
+sleep 15;
+[nil,nil,rTitleText,"Coords0:" && (_coords select 0) && "  Coords1:" && (_coords select 1), "PLAIN",6] call RE;
+
 waitUntil{{isPlayer _x && _x distance _chopcrash < 5  } count playableunits > 0}; 
 
 [nil,nil,rTitleText,"The crash site has been secured by survivors!", "PLAIN",6] call RE;
 
-[] execVM "debug\remmarkers75.sqf";
+[] execVM "\z\addons\dayz_server\debug\remmarkers75.sqf";
 MissionGoMinor = 0;
 MCoords = 0;
 publicVariable "MCoords";

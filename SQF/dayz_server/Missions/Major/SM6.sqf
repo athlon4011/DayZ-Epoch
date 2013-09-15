@@ -11,7 +11,7 @@ _coords = [getMarkerPos "center",0,5500,250,0,20,0] call BIS_fnc_findSafePos;
 
 Ccoords = _coords;
 publicVariable "Ccoords";
-[] execVM "debug\addmarkers.sqf";
+[] execVM "\z\addons\dayz_server\debug\addmarkers.sqf";
 
 _hummer = createVehicle ["HMMWV_DZ",[(_coords select 0) + 10, (_coords select 1) - 10,0],[], 0, "CAN_COLLIDE"];
 _hummer1 = createVehicle ["UAZ_Unarmed_UN_EP1",[(_coords select 0) + 20, (_coords select 1) - 5,0],[], 0, "CAN_COLLIDE"];
@@ -33,12 +33,15 @@ _aispawn = [_coords,80,6,6,1] execVM "\z\addons\dayz_server\missions\add_unit_se
 sleep 5;
 _aispawn = [_coords,40,4,4,1] execVM "\z\addons\dayz_server\missions\add_unit_server.sqf";//AI Guards
 
+sleep 15;
+[nil,nil,rTitleText,"Coords0:" && (_coords select 0) && "  Coords1:" && (_coords select 1), "PLAIN",6] call RE;
+
 waitUntil{{isPlayer _x && _x distance _hummer < 10  } count playableunits > 0}; 
 
 [nil,nil,rTitleText,"The medical crate is under survivor control!", "PLAIN",6] call RE;
 
 
-[] execVM "debug\remmarkers.sqf";
+[] execVM "\z\addons\dayz_server\debug\remmarkers.sqf";
 MissionGo = 0;
 Ccoords = 0;
 publicVariable "Ccoords";

@@ -28,7 +28,12 @@ fnc_hTime = compile preprocessFile "\z\addons\dayz_server\Missions\misc\fnc_hTim
 fnc_plyrHit   = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\fnc_plyrHit.sqf";
 server_deaths = 			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerDeaths.sqf";
 
-
+// Map Additions
+	[] ExecVM "\z\addons\dayz_server\Maps\additions\otmelvil.sqf"; // Activation
+	
+// Military/Bandit Bases
+	[] ExecVM "\z\addons\dayz_server\Maps\military\necamp.sqf"; // Activation
+	
 // Load Bases
    [] ExecVM "\z\addons\dayz_server\Maps\Sobor_Hospital.sqf"; // Activation
    [] execVM "\z\addons\dayz_server\Maps\villages.sqf"; //Epoch Villages - By Bungle (ON)
@@ -60,8 +65,8 @@ server_deaths = 			compile preprocessFileLineNumbers "\z\addons\dayz_server\comp
    [] execVM "\z\addons\dayz_server\Maps\sectorfng\sectorfng_init.sqf";
 
 //////////BUILDINGS//////////
-[] execVM "\z\addons\dayz_server\Maps\buildings\lopatino.sqf";
-[] execVM "\z\addons\dayz_server\Maps\buildings\NovyLugBase.sqf";
+//[] execVM "\z\addons\dayz_server\Maps\buildings\lopatino.sqf";
+//[] execVM "\z\addons\dayz_server\Maps\buildings\NovyLugBase.sqf";
 [] execVM "\z\addons\dayz_server\Maps\buildings\wtf_base.sqf";
 [] execVM "\z\addons\dayz_server\Maps\buildings\bandits.sqf";
 [] ExecVM "\z\addons\dayz_server\Maps\buildings\devfish_camptents.sqf";

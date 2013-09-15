@@ -10,7 +10,7 @@ _coords = [getMarkerPos "center",0,5500,250,0,20,0] call BIS_fnc_findSafePos;
 
 Ccoords = _coords;
 publicVariable "Ccoords";
-[] execVM "debug\addmarkers.sqf";
+[] execVM "\z\addons\dayz_server\debug\addmarkers.sqf";
 
 _chopper = ["UH1H_DZ","Mi17_DZ"] call BIS_fnc_selectRandom;
 
@@ -35,12 +35,15 @@ _aispawn = [_coords,80,6,4,1] execVM "\z\addons\dayz_server\missions\add_unit_se
 sleep 5;
 _aispawn = [_coords,40,4,4,1] execVM "\z\addons\dayz_server\missions\add_unit_server.sqf";//AI Guards
 
+sleep 15;
+[nil,nil,rTitleText,"Coords0:" && (_coords select 0) && "  Coords1:" && (_coords select 1), "PLAIN",6] call RE;
+
 waitUntil{{isPlayer _x && _x distance _hueychop < 10  } count playableunits > 0; 
 
 [nil,nil,rTitleText,"The helicopter has been taken by survivors!", "PLAIN",6] call RE;
 
 
-[] execVM "debug\remmarkers.sqf";
+[] execVM "\z\addons\dayz_server\debug\remmarkers.sqf";
 MissionGo = 0;
 Ccoords = 0;
 publicVariable "Ccoords";

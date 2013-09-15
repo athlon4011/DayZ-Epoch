@@ -10,7 +10,7 @@ _coords = [getMarkerPos "center",0,5500,250,0,20,0] call BIS_fnc_findSafePos;
 
 Ccoords = _coords;
 publicVariable "Ccoords";
-[] execVM "debug\addmarkers.sqf";
+[] execVM "\z\addons\dayz_server\debug\addmarkers.sqf";
 
 
 _baserunover = createVehicle ["land_fortified_nest_big",[(_coords select 0) - 20, (_coords select 1) - 10,-0.2],[], 0, "CAN_COLLIDE"];
@@ -30,23 +30,14 @@ _crate2 = createVehicle ["USLaunchersBox",[(_coords select 0) + 12, _coords sele
 [_crate2] execVM "\z\addons\dayz_server\missions\misc\fillBoxesS.sqf";
 _crate2 setVariable ["Sarge",1,true];
 
-sleep 30;
-[nil,nil,rTitleText,"Pre-Test", "PLAIN",10] call RE;
-_testvar = 1;
-if{_testvar == 1} then {
-	sleep 30;
-	[nil,nil,rTitleText,"A mission is still active! Check your map for the location!", "PLAIN",10] call RE;
-} else {
-sleep 30;
-	[nil,nil,rTitleText,"Script Failure", "PLAIN",10] call RE;
-};
-sleep 30;
-[nil,nil,rTitleText,"Post-Test", "PLAIN",10] call RE;
+sleep 15;
+[nil,nil,rTitleText,"Coords0:" && (_coords select 0) && "  Coords1:" && (_coords select 1), "PLAIN",6] call RE;
+
 waitUntil{{isPlayer _x && _x distance _baserunover < 10  } count playableunits > 0}; 
 
 [nil,nil,rTitleText,"Survivors have taken control of the camp and medical supplies.", "PLAIN",6] call RE;
 
-[] execVM "debug\remmarkers.sqf";
+[] execVM "\z\addons\dayz_server\debug\remmarkers.sqf";
 MissionGo = 0;
 Ccoords = 0;
 publicVariable "Ccoords";

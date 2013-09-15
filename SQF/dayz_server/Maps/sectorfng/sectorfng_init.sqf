@@ -4,6 +4,6 @@
 //Thanks to Sarge for his great AI work.
 
 
-[] execVM "Maps\sectorfng\marker.sqf"; //Comment out if you don't want a marker on the map
-[] execVM "Maps\sectorfng\crates.sqf"; //Comment out if you don't have weapon/vehicle crates enabled
-[] execVM "Maps\sectorfng\sectorfng.sqf"; //execs Sector FNG
+[] execVM "\z\addons\dayz_server\Maps\sectorfng\marker.sqf"; //Comment out if you don't want a marker on the map
+[] execVM "\z\addons\dayz_server\Maps\sectorfng\crates.sqf"; //Comment out if you don't have weapon/vehicle crates enabled
+[] execVM "\z\addons\dayz_server\Maps\sectorfng\sectorfng.sqf"; //execs Sector FNG
