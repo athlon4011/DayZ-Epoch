@@ -4,7 +4,7 @@ private ["_coords","_MainMarker","_base","_wait"];
 [] execVM "\z\addons\dayz_server\Missions\SMGoMajor.sqf";
 WaitUntil {MissionGo == 1};
 
-_coords = [getMarkerPos "center",0,5500,250,0,20,0] call BIS_fnc_findSafePos;
+_coords = [getMarkerPos "center",0,5500,50,0,20,0] call BIS_fnc_findSafePos;
 
 [nil,nil,rTitleText,"Bandits have set up a medical re-supply camp! Check your map for the location!", "PLAIN",10] call RE;
 
@@ -25,13 +25,9 @@ _crate = createVehicle ["USVehicleBox",[(_coords select 0) + 5, (_coords select 
 [_crate] execVM "\z\addons\dayz_server\missions\misc\fillBoxesM.sqf";
 _crate setVariable ["Sarge",1,true];
 
-
 _crate2 = createVehicle ["USLaunchersBox",[(_coords select 0) + 12, _coords select 1,0],[], 0, "CAN_COLLIDE"];
 [_crate2] execVM "\z\addons\dayz_server\missions\misc\fillBoxesS.sqf";
 _crate2 setVariable ["Sarge",1,true];
-
-sleep 15;
-[nil,nil,rTitleText,"Coords0:" && (_coords select 0) && "  Coords1:" && (_coords select 1), "PLAIN",6] call RE;
 
 waitUntil{{isPlayer _x && _x distance _baserunover < 10  } count playableunits > 0}; 
 

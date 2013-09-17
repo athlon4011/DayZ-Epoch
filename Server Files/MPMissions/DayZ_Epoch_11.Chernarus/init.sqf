@@ -117,6 +117,8 @@ if (!isDedicated) then {
 	_void = [] execVM "R3F_Realism\R3F_Realism_Init.sqf";
 	//Bus Route
 	//[] execVM "Plugins\busroute\player_axeBus.sqf";
+	// Debug Monitor
+	[] execVM "dayz_code\compile\playerstats.sqf";
 };
 #include "\z\addons\dayz_code\system\REsec.sqf"
 
@@ -130,3 +132,4 @@ call compile preprocessfile "Plugins\sarge\SHK_pos\shk_pos_init.sqf";
 
 // CPC Nametags
 [] execVM "Plugins\nametags\cpcnametags.sqf";
+

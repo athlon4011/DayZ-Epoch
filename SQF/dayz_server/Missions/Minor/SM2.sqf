@@ -4,7 +4,7 @@ private ["_coords","_wait","_MainMarker75"];
 [] execVM "\z\addons\dayz_server\Missions\SMGoMinor.sqf";
 WaitUntil {MissionGoMinor == 1};
 
-_coords = [getMarkerPos "center",0,5500,250,0,20,0] call BIS_fnc_findSafePos;
+_coords =  [getMarkerPos "center",0,5500,10,0,20,0] call BIS_fnc_findSafePos;
 
 [nil,nil,rTitleText,"A group of bandits have taken over a Medical Outpost! Check your map for the location!", "PLAIN",10] call RE;
 
@@ -46,9 +46,6 @@ sleep 3;
 sleep 3;
 [[(_coords select 0) + 20, (_coords select 1) + 15,0],40,4,2,0] execVM "\z\addons\dayz_server\missions\add_unit_server2.sqf";//AI Guards
 sleep 3;
-
-sleep 15;
-[nil,nil,rTitleText,"Coords0:" && (_coords select 0) && "  Coords1:" && (_coords select 1), "PLAIN",6] call RE;
 
 waitUntil{{isPlayer _x && _x distance _baserunover < 5  } count playableunits > 0}; 
 

@@ -1,25 +1,24 @@
 <?xml version="1.0"?>
-<!-- GENERATED AUTOMATICALLY BY VERT HOSTING -->
 <Scheduler>
 
-    <!-- Schedular to be shown all days in the week. -->
+	<!-- Schedular to be shown all days in the week. -->
 	<!-- show text ingame every 20 min -->
 	<job id="0">
-		<time>001500</time>
+		<time>000500</time>
 		<delay>000000</delay>
 		<day>1,2,3,4,5,6,7</day>
 		<loop>1</loop> 
-		<cmd>say -1 Visit KaosGamez.com - This server is PvE and PvP. All AI is Hostile. Good Luck!</cmd>	
+		<cmd>say -1 Visit us at KaosGamez.com.</cmd>	
 		<cmdtype>0</cmdtype>
 	</job>
 	
 	<!-- show text ingame every 60 min -->
 	<job id="1">
-		<time>006000</time>
+		<time>000050</time>
 		<delay>000000</delay>
 		<day>1,2,3,4,5,6,7</day>
 		<loop>1</loop> 
-		<cmd>say -1 This server restarts 4 times per day, 06:00, 12:00, 1800 and 00:00.</cmd>
+		<cmd>say -1 This server restarts 4 times per day.</cmd>
 		<cmdtype>0</cmdtype>			
 	</job>
 	
@@ -31,74 +30,38 @@
 		<delay>000000</delay>
 		<day>1,2,3,4,5,6,7</day>
 		<loop>0</loop> 
-		<cmd>say -1 This server will restart in 5 min.</cmd>
-		<cmdtype>0</cmdtype>			
-	</job>
-	<!-- 06:00 restart -->
-	<job id="3">
-		<time>06:00:00</time>
-		<delay>000000</delay>
-		<day>1,2,3,4,5,6,7</day>
-		<loop>0</loop> 
-		<cmd>#shutdown</cmd>
+		<cmd>say -1 This server will restart in 5 min!.</cmd>
 		<cmdtype>0</cmdtype>			
 	</job>
 	
 	<!-- 5 min to the 12:00 restart -->
-	<job id="4">
+	<job id="3">
 		<time>11:55:00</time>
 		<delay>000000</delay>
 		<day>1,2,3,4,5,6,7</day>
 		<loop>0</loop> 
-		<cmd>say -1 This server will restart in 5 min.</cmd>
-		<cmdtype>0</cmdtype>			
-	</job>
-	<!-- 12:00:00 restart -->
-	<job id="5">
-		<time>12:00:00</time>
-		<delay>000000</delay>
-		<day>1,2,3,4,5,6,7</day>
-		<loop>0</loop> 
-		<cmd>#shutdown</cmd>
+		<cmd>say -1 This server will restart in 5 min!.</cmd>
 		<cmdtype>0</cmdtype>			
 	</job>
 	
 	<!-- 5 min to the 18:00 restart -->
-	<job id="6">
-		<time>17:55</time>
+	<job id="4">
+		<time>17:55:00</time>
 		<delay>000000</delay>
 		<day>1,2,3,4,5,6,7</day>
 		<loop>0</loop> 
-		<cmd>say -1 This server will restart in 5 min.</cmd>
+		<cmd>say -1 This server will restart in 5 min!.</cmd>
 		<cmdtype>0</cmdtype>			
 	</job>
-	<!-- 18:00:00 restart -->
-	<job id="7">
-		<time>18:00:00</time>
-		<delay>000000</delay>
-		<day>1,2,3,4,5,6,7</day>
-		<loop>0</loop> 
-		<cmd>#shutdown</cmd>
-		<cmdtype>0</cmdtype>			
-	</job>	
 	
 	<!-- 5 min to the 00:00 restart -->
-	<job id="8">
+	<job id="5">
 		<time>23:55:00</time>
 		<delay>000000</delay>
 		<day>1,2,3,4,5,6,7</day>
 		<loop>0</loop> 
-		<cmd>say -1 This server will restart in 5 min. i'll only show you this message once!.</cmd>
+		<cmd>say -1 This server will restart in 5 min!.</cmd>
 		<cmdtype>0</cmdtype>			
 	</job>
-	<!-- 00:00:00 restart -->
-	<job id="9">
-		<time>00:00:00</time>
-		<delay>000000</delay>
-		<day>1,2,3,4,5,6,7</day>
-		<loop>0</loop> 
-		<cmd>#shutdown</cmd>
-		<cmdtype>0</cmdtype>			
-	</job>	
 
 </Scheduler>

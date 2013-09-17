@@ -282,7 +282,7 @@ if (!isDedicated) then {
 		//if (_dikCode in actionKeys 'MoveForward' or _dikCode in actionKeys 'MoveBack') then {r_interrupt = true};
 		if (_dikCode == 210) then //SCROLL LOCK
 			{
-				_nill = execvm "\z\addons\dayz_code\actions\playerstats.sqf";
+				_nill = execvm "dayz_code\compile\playerstats.sqf";
 			};
 		//Prevent exploit of drag body
 		if ((_dikCode in actionKeys "Prone") and r_drag_sqf) then { force_dropBody = true; };

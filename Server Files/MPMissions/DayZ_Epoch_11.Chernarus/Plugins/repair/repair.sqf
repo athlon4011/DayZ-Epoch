@@ -13,7 +13,7 @@ if (!ib_refueling_in_progress) then {
  
         ib_refueling_in_progress = true;
  
-        titleText ["Refueling and Repairing", "PLAIN DOWN", 3];
+        titleText ["Refueling and Repairing(Repair will not stick through restart, do it the right way!)", "PLAIN DOWN", 3];
  
         while {(vehicle _caller == _target) and (local _target)} do {
                 private ["_velocity", "_cfcust","_cfcust2"];
