@@ -10,7 +10,7 @@ _coords = [getMarkerPos "center",0,5500,10,0,2000,0] call BIS_fnc_findSafePos;
 
 MCoords = _coords;
 publicVariable "MCoords";
-[] execVM "\z\addons\dayz_server\debug\addmarkers75.sqf";
+[] execVM "debug\addmarkers75.sqf";
 
 _uralcrash = createVehicle ["UralWreck",_coords,[], 0, "CAN_COLLIDE"];
 _uralcrash setVariable ["Sarge",1,true];
@@ -40,7 +40,7 @@ waitUntil{{isPlayer _x && _x distance _uralcrash < 5  } count playableunits > 0}
 
 [nil,nil,rTitleText,"The crash site has been secured by survivors!", "PLAIN",6] call RE;
 
-[] execVM "\z\addons\dayz_server\debug\remmarkers75.sqf";
+[] execVM "debug\remmarkers75.sqf";
 MissionGoMinor = 0;
 MCoords = 0;
 publicVariable "MCoords";

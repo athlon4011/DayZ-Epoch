@@ -25,6 +25,7 @@ server_spawnCrashSite  =    compile preprocessFileLineNumbers "\z\addons\dayz_se
 server_handleZedSpawn =		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_handleZedSpawn.sqf";
 server_spawnEvents =			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_spawnEvent.sqf";
 fnc_hTime = compile preprocessFile "\z\addons\dayz_server\Missions\misc\fnc_hTime.sqf"; //Random integer selector for mission wait time
+fnc_items = compile preprocessFile "\z\addons\dayz_server\Missions\misc\fnc_items.sqf"; //Item pool for ammo drops
 fnc_plyrHit   = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\fnc_plyrHit.sqf";
 server_deaths = 			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerDeaths.sqf";
 
@@ -32,7 +33,7 @@ server_deaths = 			compile preprocessFileLineNumbers "\z\addons\dayz_server\comp
 	[] ExecVM "\z\addons\dayz_server\Maps\additions\otmelvil.sqf"; // Activation
 	
 // Military/Bandit Bases
-	[] ExecVM "\z\addons\dayz_server\Maps\military\necamp.sqf"; // Activation
+	//[] ExecVM "\z\addons\dayz_server\Maps\military\necamp.sqf"; // Activation
 	
 // Load Bases
    [] ExecVM "\z\addons\dayz_server\Maps\Sobor_Hospital.sqf"; // Activation
@@ -347,7 +348,7 @@ spawn_vehicles = {
 };
 
 spawn_roadblocks = {
-	private ["_position","_veh","_num","_config","_itemType","_itemChance","_weights","_index","_iArray","_istoomany","_marker","_spawnloot","_nearby","_spawnveh","_WreckList"];
+	private ["_position","_veh","_istoomany","_marker","_spawnveh","_WreckList"];
 	_WreckList = ["SKODAWreck","HMMWVWreck","UralWreck","datsun01Wreck","hiluxWreck","datsun02Wreck","UAZWreck","Land_Misc_Garb_Heap_EP1","Fort_Barricade_EP1","Rubbish2"];
 	
 	waitUntil{!isNil "BIS_fnc_selectRandom"};
@@ -375,11 +376,6 @@ spawn_roadblocks = {
 			
 			waitUntil{!isNil "BIS_fnc_selectRandom"};
 			_spawnveh = _WreckList call BIS_fnc_selectRandom;
-			_spawnloot =  "DynamicDebris";
-
-			if((_spawnveh == "HMMWVWreck") or (_spawnveh == "UralWreck") or (_spawnveh == "UAZWreck")) then {
-				_spawnloot = "DynamicDebrisMilitary";
-			};
 		
 			//diag_log("DEBUG: Spawning a crashed " + _spawnveh + " with " + _spawnloot + " at " + str(_position));
 			_veh = createVehicle [_spawnveh,_position, [], 0, "CAN_COLLIDE"];
@@ -515,7 +511,7 @@ dayz_recordLogin = {
 // Cleanup flies
 server_cleanFlies = 
 {
-    private ["_sound","_newdayz_flyMonitor"];
+    private ["_sound","_newdayz_flyMonitor","_body"];
 	
 	DZE_FlyWorkingSet = DZE_FlyWorkingSet+dayz_flyMonitor;
 	dayz_flyMonitor = [];
@@ -528,36 +524,39 @@ server_cleanFlies =
 		// Remove flies
 		if (isNull _body) then {
 			deleteVehicle _sound;
-			[_body] call server_Delete;
 		} else {
 			_newdayz_flyMonitor set [count _newdayz_flyMonitor,_x];
 		};
 
 	} forEach DZE_FlyWorkingSet;
-	
 	DZE_FlyWorkingSet = _newdayz_flyMonitor;
 };
 
-server_cleanDead =
-{
+server_cleanDead = {
+	private ["_objectPos","_noPlayerNear","_body","_handle"];
 	{
 		if (_x isKindOf "zZombie_Base") then
 		{
-			deleteVehicle _x;
-		}
-		else
-		{
-			_handled = _x getVariable ["handled",true];
-			if (_handled) then {
+			_objectPos = getPosATL _x;
+			_noPlayerNear = {isPlayer _x} count (_objectPos nearEntities ["CAManBase",35]) == 0;
+			if (_noPlayerNear) then
+			{
+				deleteVehicle _x;
+			};
+		} else {
+			_handle = _x getVariable ["handle",true];
+			if (_handle) then {
 				_x enableSimulation false;
 				_body removeAllEventHandlers "HandleDamage";
 				_body removeAllEventHandlers "Killed";
 				_body removeAllEventHandlers "Fired";
 				_body removeAllEventHandlers "FiredNear";
+				_x setVariable ["handle",false];
 			};
 		};
 	} forEach allDead;
 };
+
 
 server_cleanLoot =
 {

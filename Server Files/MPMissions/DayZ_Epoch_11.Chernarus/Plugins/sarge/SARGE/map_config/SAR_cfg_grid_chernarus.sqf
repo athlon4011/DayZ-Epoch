@@ -215,23 +215,23 @@ diag_log format["SAR_AI: Static Spawning for infantry patrols started"];
 //
 
 //Sector FNG Stuff
-[SAR_marker_sectorfng_front,1,0,15,"fortify",false] call SAR_AI;
-[SAR_marker_sectorfng_back,1,0,15,"fortify",false] call SAR_AI;
-[SAR_marker_sectorfng_crate1,1,1,4,"fortify",false] call SAR_AI;
-[SAR_marker_sectorfng_crate2,1,1,4,"fortify",false] call SAR_AI;
-[SAR_marker_sectorfng_crate3,1,1,4,"fortify",false] call SAR_AI;
-[SAR_marker_sectorfng_crate4,1,1,4,"fortify",false] call SAR_AI;
-[SAR_marker_sectorfng_crate5,1,1,4,"fortify",false] call SAR_AI;
+[SAR_marker_sectorfng_front,3,0,15,"fortify",false] call SAR_AI;
+[SAR_marker_sectorfng_back,3,0,15,"fortify",false] call SAR_AI;
+[SAR_marker_sectorfng_crate1,3,1,4,"fortify",false] call SAR_AI;
+[SAR_marker_sectorfng_crate2,3,1,4,"fortify",false] call SAR_AI;
+[SAR_marker_sectorfng_crate3,3,1,4,"fortify",false] call SAR_AI;
+[SAR_marker_sectorfng_crate4,3,1,4,"fortify",false] call SAR_AI;
+[SAR_marker_sectorfng_crate5,3,1,4,"fortify",false] call SAR_AI;
 
-[SAR_marker_firebasereaper_1,1,0,5,"fortify",false] call SAR_AI;
-[SAR_marker_firebasereaper_2,1,0,6,"fortify",false] call SAR_AI;
-[SAR_marker_firebasereaper_3,1,0,5,"fortify",false] call SAR_AI;
-[SAR_marker_firebasereaper_4,1,1,4,"fortify",false] call SAR_AI;
-[SAR_marker_firebasereaper_5,1,0,6,"patrol",true] call SAR_AI;
-[SAR_marker_firebasereaper_6,1,0,4,"fortify",false] call SAR_AI;
-[SAR_marker_firebasereaper_7,1,0,5,"fortify",false] call SAR_AI;
-[SAR_marker_firebasereaper_8,1,1,4,"patrol",true] call SAR_AI;
-[SAR_marker_firebasereaper_9,1,0,6,"fortify",false] call SAR_AI;
-[SAR_marker_firebasereaper_10,1,1,3,"fortify",false] call SAR_AI;
+[SAR_marker_firebasereaper_1,3,0,5,"fortify",false] call SAR_AI;
+[SAR_marker_firebasereaper_2,3,0,6,"fortify",false] call SAR_AI;
+[SAR_marker_firebasereaper_3,3,0,5,"fortify",false] call SAR_AI;
+[SAR_marker_firebasereaper_4,3,1,4,"fortify",false] call SAR_AI;
+[SAR_marker_firebasereaper_5,3,0,6,"patrol",true] call SAR_AI;
+[SAR_marker_firebasereaper_6,3,0,4,"fortify",false] call SAR_AI;
+[SAR_marker_firebasereaper_7,3,0,5,"fortify",false] call SAR_AI;
+[SAR_marker_firebasereaper_8,3,1,4,"patrol",true] call SAR_AI;
+[SAR_marker_firebasereaper_9,3,0,6,"fortify",false] call SAR_AI;
+[SAR_marker_firebasereaper_10,3,1,3,"fortify",false] call SAR_AI;
 
 diag_log format["SAR_AI: Static Spawning for infantry patrols finished"];

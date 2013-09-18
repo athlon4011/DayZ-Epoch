@@ -10,6 +10,8 @@ _isbuildable = (typeOf _object) in dayz_allowedObjects;
 _isNotOk = false;
 _firstTime = false;
 
+if(isNull(_object)) exitWith { };
+
 _objectID =	_object getVariable ["ObjectID","0"];
 _uid = 		_object getVariable ["ObjectUID","0"];
 
@@ -20,7 +22,6 @@ if ((typeName _objectID != "string") || (typeName _uid != "string")) then
     _objectID = "0";
     _uid = "0";
 };
-if (_object getVariable "Mission" == 1) exitWith {};
 if (!_parachuteWest and !(locked _object)) then {
 	if (_objectID == "0" && _uid == "0") then
 	{

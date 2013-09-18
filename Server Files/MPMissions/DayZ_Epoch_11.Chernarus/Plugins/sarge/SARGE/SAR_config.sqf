@@ -60,7 +60,7 @@ SAR_FIX_VEHICLE_ISSUE = true;
 SAR_AI_disable_UPSMON_AI = false;
 
 // enable / disable AI stealing vehicles - if you enable this, be sure to check KRON_UPS_searchVehicledist value below
-SAR_AI_STEAL_VEHICLE = false;
+SAR_AI_STEAL_VEHICLE = true;
 
 // -----------------------------------------------
 // Humanity values 
@@ -229,15 +229,15 @@ KRON_UPS_alerttime = 90;
 KRON_UPS_closeenough = 250; // if you have vast plain areas, increase this to sth around 150-300 
 
 // if you are spotted by AI group, how close the other AI group have to be to You , to be informed about your present position. over this, will lose target
-KRON_UPS_sharedist = 400;
+KRON_UPS_sharedist = 500;
 
 // If enabled IA communication between them with radio defined sharedist distance, 0/2 
 // (must be set to 2 in order to use reinforcement !R)
-KRON_UPS_comradio = 0;
+KRON_UPS_comradio = 2;
 
 // Distance from destination for searching vehicles. (Search area is about 200m), 
 // If your destination point is further than KRON_UPS_searchVehicledist, AI will try to find a vehicle to go there.
-KRON_UPS_searchVehicledist = 600; // 700, 900  
+KRON_UPS_searchVehicledist = 600; // 700, 900
 
 //Sides that are enemies of resistance // DO NOT CHANGE THIS
 KRON_UPS_Res_enemy = [east];
@@ -254,7 +254,7 @@ KRON_UPS_Res_enemy = [east];
 //
 //                      2.5 -> easy
 //
-R_knowsAboutEnemy = 0.5;
+R_knowsAboutEnemy = 0.4;
 
 //
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -293,50 +293,44 @@ SAR_soldier_surv_list = ["Bandit1_DZ", "BanditW1_DZ","Soldier_Crew_PMC","Camo1_D
 
 // Leader
 SAR_leader_sold_skills = [
-
-    ["aimingAccuracy",0.45, 0.10], // skilltype, <min value>, <random value added to min>;
-    ["aimingShake",   0.45, 0.10],
+    ["aimingAccuracy",0.80, 0.20], // skilltype, <min value>, <random value added to min>;
+    ["aimingShake",   0.80, 0.20],
     ["aimingSpeed",   0.80, 0.20],
-    ["spotDistance",  0.70, 0.30],
-    ["spotTime",      0.65, 0.20],
+    ["spotDistance",  0.80, 0.20],
+    ["spotTime",      0.80, 0.20],
     ["endurance",     0.80, 0.20],
     ["courage",       0.80, 0.20],
     ["reloadSpeed",   0.80, 0.20],
     ["commanding",    0.80, 0.20],
     ["general",       0.80, 0.20]
-
 ];
 
 // rifleman
 SAR_soldier_sold_skills  = [
-
-    ["aimingAccuracy",0.45, 0.10], // skilltype, <min value>, <random value added to min>;
-    ["aimingShake",   0.45, 0.10],
-    ["aimingSpeed",   0.70, 0.20],
-    ["spotDistance",  0.55, 0.30],
-    ["spotTime",      0.30, 0.20],
-    ["endurance",     0.60, 0.20],
-    ["courage",       0.60, 0.20],
-    ["reloadSpeed",   0.60, 0.20],
-    ["commanding",    0.60, 0.20],
-    ["general",       0.60, 0.20]
-
+    ["aimingAccuracy",0.80, 0.20], // skilltype, <min value>, <random value added to min>;
+    ["aimingShake",   0.80, 0.20],
+    ["aimingSpeed",   0.80, 0.20],
+    ["spotDistance",  0.80, 0.20],
+    ["spotTime",      0.80, 0.20],
+    ["endurance",     0.80, 0.20],
+    ["courage",       0.80, 0.20],
+    ["reloadSpeed",   0.80, 0.20],
+    ["commanding",    0.80, 0.20],
+    ["general",       0.80, 0.20]
 ];
 
 // Sniper
 SAR_sniper_sold_skills = [
-
-    ["aimingAccuracy",0.80, 0.10], // skilltype, <min value>, <random value added to min>;
-    ["aimingShake",   0.90, 0.10],
-    ["aimingSpeed",   0.70, 0.20],
-    ["spotDistance",  0.70, 0.30],
-    ["spotTime",      0.75, 0.20],
-    ["endurance",     0.70, 0.20],
-    ["courage",       0.70, 0.20],
-    ["reloadSpeed",   0.70, 0.20],
-    ["commanding",    0.70, 0.20],
-    ["general",       0.70, 0.20]
-
+    ["aimingAccuracy",0.80, 0.20], // skilltype, <min value>, <random value added to min>;
+    ["aimingShake",   0.80, 0.20],
+    ["aimingSpeed",   0.80, 0.20],
+    ["spotDistance",  0.80, 0.20],
+    ["spotTime",      0.80, 0.20],
+    ["endurance",     0.80, 0.20],
+    ["courage",       0.80, 0.20],
+    ["reloadSpeed",   0.80, 0.20],
+    ["commanding",    0.80, 0.20],
+    ["general",       0.80, 0.20]
 ];
 
 //
@@ -345,48 +339,42 @@ SAR_sniper_sold_skills = [
 
 // Leader
 SAR_leader_band_skills = [
-
-    ["aimingAccuracy",0.35, 0.10], // skilltype, <min value>, <random value added to min>;
-    ["aimingShake",   0.35, 0.10],
-    ["aimingSpeed",   0.60, 0.20],
-    ["spotDistance",  0.40, 0.30],
-    ["spotTime",      0.45, 0.20],
-    ["endurance",     0.40, 0.20],
-    ["courage",       0.50, 0.20],
-    ["reloadSpeed",   0.60, 0.20],
-    ["commanding",    0.50, 0.20],
-    ["general",       0.50, 0.20]
-
+    ["aimingAccuracy",0.80, 0.20], // skilltype, <min value>, <random value added to min>;
+    ["aimingShake",   0.80, 0.20],
+    ["aimingSpeed",   0.80, 0.20],
+    ["spotDistance",  0.80, 0.20],
+    ["spotTime",      0.80, 0.20],
+    ["endurance",     0.80, 0.20],
+    ["courage",       0.80, 0.20],
+    ["reloadSpeed",   0.80, 0.20],
+    ["commanding",    0.80, 0.20],
+    ["general",       0.80, 0.20]
 ];
 // Rifleman
 SAR_soldier_band_skills = [
-
-    ["aimingAccuracy",0.35, 0.10], // skilltype, <min value>, <random value added to min>;
-    ["aimingShake",   0.35, 0.10],
-    ["aimingSpeed",   0.60, 0.20],
-    ["spotDistance",  0.40, 0.20],
-    ["spotTime",      0.40, 0.20],
-    ["endurance",     0.40, 0.20],
-    ["courage",       0.40, 0.20],
-    ["reloadSpeed",   0.40, 0.20],
-    ["commanding",    0.40, 0.20],
-    ["general",       0.40, 0.20]
-
+    ["aimingAccuracy",0.80, 0.20], // skilltype, <min value>, <random value added to min>;
+    ["aimingShake",   0.80, 0.20],
+    ["aimingSpeed",   0.80, 0.20],
+    ["spotDistance",  0.80, 0.20],
+    ["spotTime",      0.80, 0.20],
+    ["endurance",     0.80, 0.20],
+    ["courage",       0.80, 0.20],
+    ["reloadSpeed",   0.80, 0.20],
+    ["commanding",    0.80, 0.20],
+    ["general",       0.80, 0.20]
 ];
 // Sniper
 SAR_sniper_band_skills = [
-
-    ["aimingAccuracy",0.70, 0.10], // skilltype, <min value>, <random value added to min>;
-    ["aimingShake",   0.80, 0.10],
-    ["aimingSpeed",   0.70, 0.20],
-    ["spotDistance",  0.90, 0.10],
-    ["spotTime",      0.55, 0.20],
-    ["endurance",     0.70, 0.20],
-    ["courage",       0.70, 0.20],
-    ["reloadSpeed",   0.70, 0.20],
-    ["commanding",    0.50, 0.20],
-    ["general",       0.60, 0.20]
-
+    ["aimingAccuracy",0.80, 0.20], // skilltype, <min value>, <random value added to min>;
+    ["aimingShake",   0.80, 0.20],
+    ["aimingSpeed",   0.80, 0.20],
+    ["spotDistance",  0.80, 0.20],
+    ["spotTime",      0.80, 0.20],
+    ["endurance",     0.80, 0.20],
+    ["courage",       0.80, 0.20],
+    ["reloadSpeed",   0.80, 0.20],
+    ["commanding",    0.80, 0.20],
+    ["general",       0.80, 0.20]
 ];
 
 //
@@ -395,48 +383,42 @@ SAR_sniper_band_skills = [
 
 // Leader
 SAR_leader_surv_skills = [
-
-    ["aimingAccuracy",0.45, 0.10], // skilltype, <min value>, <random value added to min>;
-    ["aimingShake",   0.45, 0.10],
-    ["aimingSpeed",   0.60, 0.20],
-    ["spotDistance",  0.40, 0.30],
-    ["spotTime",      0.45, 0.20],
-    ["endurance",     0.40, 0.20],
-    ["courage",       0.50, 0.20],
-    ["reloadSpeed",   0.60, 0.20],
-    ["commanding",    0.50, 0.20],
-    ["general",       0.50, 0.20]
-
+    ["aimingAccuracy",0.80, 0.20], // skilltype, <min value>, <random value added to min>;
+    ["aimingShake",   0.80, 0.20],
+    ["aimingSpeed",   0.80, 0.20],
+    ["spotDistance",  0.80, 0.20],
+    ["spotTime",      0.80, 0.20],
+    ["endurance",     0.80, 0.20],
+    ["courage",       0.80, 0.20],
+    ["reloadSpeed",   0.80, 0.20],
+    ["commanding",    0.80, 0.20],
+    ["general",       0.80, 0.20]
 ];
 // Rifleman
 SAR_soldier_surv_skills = [
-
-    ["aimingAccuracy",0.35, 0.10], // skilltype, <min value>, <random value added to min>;
-    ["aimingShake",   0.35, 0.10],
-    ["aimingSpeed",   0.60, 0.20],
-    ["spotDistance",  0.45, 0.30],
-    ["spotTime",      0.40, 0.20],
-    ["endurance",     0.40, 0.20],
-    ["courage",       0.40, 0.20],
-    ["reloadSpeed",   0.40, 0.20],
-    ["commanding",    0.40, 0.20],
-    ["general",       0.40, 0.20]
-
+    ["aimingAccuracy",0.80, 0.20], // skilltype, <min value>, <random value added to min>;
+    ["aimingShake",   0.80, 0.20],
+    ["aimingSpeed",   0.80, 0.20],
+    ["spotDistance",  0.80, 0.20],
+    ["spotTime",      0.80, 0.20],
+    ["endurance",     0.80, 0.20],
+    ["courage",       0.80, 0.20],
+    ["reloadSpeed",   0.80, 0.20],
+    ["commanding",    0.80, 0.20],
+    ["general",       0.80, 0.20]
 ];
 // Sniper
 SAR_sniper_surv_skills = [
-
-    ["aimingAccuracy",0.70, 0.10], // skilltype, <min value>, <random value added to min>;
-    ["aimingShake",   0.80, 0.10],
-    ["aimingSpeed",   0.70, 0.20],
-    ["spotDistance",  0.70, 0.30],
-    ["spotTime",      0.65, 0.20],
-    ["endurance",     0.70, 0.20],
-    ["courage",       0.70, 0.20],
-    ["reloadSpeed",   0.70, 0.20],
-    ["commanding",    0.50, 0.20],
-    ["general",       0.60, 0.20]
-
+    ["aimingAccuracy",0.80, 0.20], // skilltype, <min value>, <random value added to min>;
+    ["aimingShake",   0.80, 0.20],
+    ["aimingSpeed",   0.80, 0.20],
+    ["spotDistance",  0.80, 0.20],
+    ["spotTime",      0.80, 0.20],
+    ["endurance",     0.80, 0.20],
+    ["courage",       0.80, 0.20],
+    ["reloadSpeed",   0.80, 0.20],
+    ["commanding",    0.80, 0.20],
+    ["general",       0.80, 0.20]
 ];
 
 
@@ -800,4 +782,4 @@ SAR_band_sniper_tools = [
 
 // define the type of heli(s) you want to use here for the heli patrols - make sure you include helis that have minimum 2 gunner positions, anything else might fail
 //SAR_heli_type=["UH1H_DZ","Mi17_DZ"];
-SAR_heli_type=["UH1H_DZ"];
+SAR_heli_type=["UH1H_DZ","Mi17_DZ","CH_47F_EP1"];

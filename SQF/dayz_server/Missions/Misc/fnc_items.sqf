@@ -1,6 +1,6 @@
 // Item List ["ClassName",1-100(probability),"Ammo","Type"]
-private["_tempitems","_return"];
-_tempitems = [
+
+_lootItems = [
 	["AKS_74_kobra",10,"30Rnd_545x39_AK","Rifle"],
 	["AKS_74_U",10,"30Rnd_545x39_AK","Rifle"],
 	["AKS_GOLD",10,"30Rnd_545x39_AK","Rifle"],
@@ -12,12 +12,13 @@ _tempitems = [
 	["G36C",10,"30Rnd_556x45_G36","Rifle"],
 	["G36C_camo",10,"30Rnd_556x45_G36","Rifle"],
 	["G36K_camo",10,"30Rnd_556x45_G36","Rifle"],
-	["G36_C_SD_camo",10,"30Rnd_556x45_G36","Rifle"],
+	["G36_C_SD_camo",10,"30Rnd_556x45_G36SD","Rifle"],
 	["LeeEnfield",10,"10x_303","Rifle"],
-	["M16A2",10,"ammo","Rifle"],
-	["M16A2GL",10,"ammo","Rifle"],
-	["M16A4_ACG",10,"ammo","Rifle"],
-	["M4A1",10,"ammo","Rifle"],
+	["M16A2",10,"30Rnd_556x45_Stanag","Rifle"],
+	["M16A2GL",10,"30Rnd_556x45_Stanag","Rifle"],
+	["M16A4_ACG",10,"30Rnd_556x45_Stanag","Rifle"],
+	["M4A1_RCO_GL",10,"30Rnd_556x45_Stanag","Rifle"],
+	["M4A1",10,"30Rnd_556x45_Stanag","Rifle"],
 	["M4A1_Aim",10,"30Rnd_556x45_Stanag","Rifle"],
 	["M4A1_AIM_SD_camo",10,"30Rnd_556x45_StanagSD","Rifle"],
 	["M4A1_HWS_GL_camo",10,"30Rnd_556x45_Stanag","Rifle"],
@@ -26,28 +27,31 @@ _tempitems = [
 	["Sa58V_CCO_EP1",10,"30Rnd_762x39_SA58","Rifle"],
 	["Sa58V_EP1",10,"30Rnd_762x39_SA58","Rifle"],
 	["Sa58V_RCO_EP1",10,"30Rnd_762x39_SA58","Rifle"],
-	["m8_compact",10,"ammo","Rifle"],
-	["m8_sharpshooter",10,"ammo","Rifle"],
-	["m8_holo_sd",10,"ammo","Rifle"],
-	["m8_carbine",10,"ammo","Rifle"],
+	["SCAR_L_STD_HOLO",10,"30Rnd_556x45_Stanag","Rifle"],
+	["m8_compact",10,"30Rnd_556x45_Stanag","Rifle"],
+	["m8_sharpshooter",10,"30Rnd_556x45_Stanag","Rifle"],
+	["m8_holo_sd",10,"30Rnd_556x45_StanagSD","Rifle"],
+	["m8_carbine",10,"30Rnd_556x45_Stanag","Rifle"],
 	
 	["SVD_des_EP1",10,"10Rnd_762x54_SVD","Sniper"],
 	["DMR",10,"20Rnd_762x51_DMR","Sniper"],
 	["huntingrifle",10,"5x_22_LR_17_HMR","Sniper"],
-	["BAF_LRR_scoped",10,"ammo","Sniper"],
+	["BAF_LRR_scoped",10,"5Rnd_86x70_L115A1","Sniper"],
+	["AK_107_pso",10,"30Rnd_545x39_AK","Sniper"],
 	["M14_EP1",10,"20Rnd_762x51_DMR","Sniper"],
 	["M24",10,"5Rnd_762x51_M24","Sniper"],
-	["M40A3",10,"ammo","Sniper"],
+	["M40A3",10,"5Rnd_762x51_M24","Sniper"],
 	["SVD_CAMO",10,"10Rnd_762x54_SVD","Sniper"],
 	["SCAR_H_LNG_Sniper_SD",10,"20Rnd_762x51_SB_SCAR","Sniper"],
+	["SCAR_H_LNG_Sniper",10,"20Rnd_762x51_B_SCAR","Sniper"],
 	["SVD",10,"10Rnd_762x54_SVD","Sniper"],
 	["VSS_vintorez",10,"20Rnd_9x39_SP5_VSS","Sniper"],
-	["M24_des_EP1",10,"ammo","Sniper"],
+	["M24_des_EP1",10,"5Rnd_762x51_M24","Sniper"],
 	
 	["M240_DZ",10,"100Rnd_762x51_M240","Machine"],
 	["M249_DZ",10,"200Rnd_556x45_M249","Machine"],
-	["Mk_48_DZ",10,"ammo","Machine"],
-	["Pecheneg_DZ",10,"ammo","Machine"],
+	["Mk_48_DZ",10,"100Rnd_762x51_M240","Machine"],
+	["Pecheneg_DZ",10,"100Rnd_762x54_PK","Machine"],
 	
 	["bizon_silenced",10,"64Rnd_9x19_SD_Bizon","SMG"],
 	["MP5A5",10,"30rnd_9x19_MP5","SMG"],
@@ -57,7 +61,7 @@ _tempitems = [
 	["UZI_SD_EP1",10,"30Rnd_9x19_UZI_SD","SMG"],
 	
 	["M1014",10,"8Rnd_B_Beneli_74Slug","Shotgun"],
-	["MR43",10,"ammo","Shotgun"],
+	["MR43",10,"2Rnd_shotgun_74Slug","Shotgun"],
 	["Remington870_lamp",10,"8Rnd_B_Beneli_74Slug","Shotgun"],
 	["Winchester1866",10,"15Rnd_W1866_Slug","Shotgun"],
 	["Saiga12K",10,"8Rnd_B_Saiga12_74Slug","Shotgun"],
@@ -158,5 +162,4 @@ _tempitems = [
 	["DZ_TerminalPack_EP1",10,"none","Backpack"]
 	];
 	
-	_return = _tempitems;
-	_return
+	_lootItems;

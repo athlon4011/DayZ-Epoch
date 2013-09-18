@@ -3,29 +3,34 @@ fnc_debug = {
     debugMonitor = true;
     while {debugMonitor} do
     {
-	    _kills =        player getVariable["zombieKills",0];
+        _kills =        player getVariable["zombieKills",0];
         _killsH =       player getVariable["humanKills",0];
         _killsB =       player getVariable["banditKills",0];
         _humanity =     player getVariable["humanity",0];
         _headShots =    player getVariable["headShots",0];
 	
-	    hintSilent parseText format ["
-			<t size='1.25' font='Bitstream'align='center' color='#D60000'>DayZ Epoch</t><br/>
-			<t size='1.15' font='Bitstream'align='center' color='#D60000'>www.BMRF.me</t><br/>
-			<t size='1.15' font='Bitstream'align='center' color='#5882FA'>Survived %2 Days</t><br/>
-			<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Players Online: </t><t size='0.95 'font='Bitstream' align='right'>%3</t><br/>
-			<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Murders: </t><t size='0.95' font='Bitstream' align='right'>%4</t><br/>
-			<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Bandits Killed: </t><t size='0.95' font='Bitstream' align='right'>%5</t><br/>
-			<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Zombies Killed: </t><t size='0.95' font='Bitstream' align='right'>%6</t><br/>
-			<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Humanity: </t><t size='0.95' font='Bitstream' align='right'>%7</t><br/>
-			<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Blood: </t><t size='0.95' font='Bitstream' align='right'>%8</t><br/>
-			<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>FPS: </t><t size='0.95' font='Bitstream' align='right'>%9</t><br/>
-			<t size='1.15' font='Bitstream'align='center' color='#5882FA'>Server Time: %10</t><br/>",
-			<t size='1.15' font='Bitstream'align='center' color='#5882FA'>Restart in %11 Minutes</t><br/>",
-
-			dayz_playerName,(dayz_Survived),(count playableUnits),_killsH,_killsB,_kills,round _humanity,r_player_blood,(round diag_fps), serverTime,(round(240-(serverTime) / 60))
-			];
-		sleep 1;
+	      hintSilent parseText format ["
+				<t size='1' font='Bitstream' align='center' color='#FFCC00'>Survived %1 Days</t><br/><br/>
+        <t size='1' font='Bitstream' align='left' color='#EEC900'>Blood Left:</t><t size='1' font='Bitstream' align='right' color='#EE0000'>%2</t><br/>
+        <t size='1' font='Bitstream' align='left' color='#EEC900'>Humanity:</t><t size='1'font='Bitstream' align='right' color='#EEC900'>%3</t><br/>
+        <t size='1' font='Bitstream' align='left' color='#EEC900'>Murders:</t><t size='1'font='Bitstream' align='right' color='#EEC900'>%4</t><br/>
+        <t size='1' font='Bitstream' align='left' color='#EEC900'>Bandits Killed:</t><t size='1'font='Bitstream' align='right' color='#EEC900'>%5</t><br/>
+        <t size='1' font='Bitstream' align='left' color='#EEC900'>Zombies Killed:</t><t size='1'font='Bitstream' align='right' color='#EEC900'>%6</t><br/>
+        <t size='1' font='Bitstream' align='left' color='#EEC900'>Headshots:</t><t size='1'font='Bitstream' align='right' color='#EEC900'>%7</t><br/>
+				<t size='1' font='Bitstream' align='left' color='#EEC900'>Fps:</t><t size='1'font='Bitstream' align='right' color='#FFFFFF'>%8</t><br/>
+				<t size='1.15' font='Bitstream'align='center' color='#5882FA'>Restart in %9 Minutes</t><br/>
+        <t size='1' font='Bitstream' align='center' color='#0080C0'>www.kaosgamez.com</t><br/>",
+        dayz_skilllevel,
+        r_player_blood,
+        round _humanity,
+        _killsH,
+        _killsB,
+        _kills,
+        _headShots,
+        round diag_FPS,
+		(round(360-(serverTime) / 60))
+        ];
+    sleep 1;
     };
 };
  
