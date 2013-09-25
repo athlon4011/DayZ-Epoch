@@ -34,9 +34,9 @@ DefaultMagazines = ["ItemBandage","ItemBandage","7Rnd_45ACP_1911","ItemPainkille
 DefaultWeapons = ["Colt1911","Binocular","ItemKnife","ItemMap","ItemWatch"]; 
 DefaultBackpack = "DZ_Assault_Pack_EP1"; 
 DefaultBackpackWeapon = "";
-
 //Load in compiled functions
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
+call compile preprocessFileLineNumbers "dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
 progressLoadingScreen 0.1;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";				//Initilize the publicVariable event handlers
 progressLoadingScreen 0.2;
@@ -44,12 +44,13 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functi
 progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
 progressLoadingScreen 0.5;
-call compile preprocessFileLineNumbers "server_traders.sqf";
+call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
 call compile preprocessFileLineNumbers "dayz_code\init\compiles.sqf";					//Compile trader configs
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
 playerstats = compile preprocessFileLineNumbers "dayz_code\compile\playerstats.sqf";
+
 /* BIS_Effects_* fixes from Dwarden */
 BIS_Effects_EH_Killed = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\BIS_Effects\killed.sqf";
 BIS_Effects_AirDestruction = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\BIS_Effects\AirDestruction.sqf";
@@ -108,6 +109,7 @@ if (!isDedicated) then {
 	waitUntil {!isNil "dayz_loadScreenMsg"};
 	dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
 	[] execVM "Plugins\repair\repairactions.sqf";
+	
 	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
@@ -116,8 +118,9 @@ if (!isDedicated) then {
 	//[] execVM "Plugins\busroute\player_axeBus.sqf";
 	// Debug Monitor
 	[] execVM "dayz_code\compile\playerstats.sqf";
+	
 	//Lights
-	[17,6,true,false,true,true,72,242,600,10,[0.698, 0.556, 0.419],"Generator_DZ",208,"",0.5] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
+	//[17,6,true,false,true,true,72,242,600,10,[0.698, 0.556, 0.419],"Generator_DZ",208,"",0.5] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 };
 #include "\z\addons\dayz_code\system\REsec.sqf"
 
@@ -131,3 +134,10 @@ call compile preprocessfile "Plugins\sarge\SHK_pos\shk_pos_init.sqf";
 
 // CPC Nametags
 [] execVM "Plugins\nametags\cpcnametags.sqf";
+
+sleep 20;
+// Mission Marker Loop
+[] execVM "debug\addmarkers.sqf";
+[] execVM "debug\addmarkers75.sqf";
+
+[] execVM "Plugins\markers\sectorfng.sqf";

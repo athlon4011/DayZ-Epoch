@@ -14,6 +14,7 @@ server_updateObject =		compile preprocessFileLineNumbers "\z\addons\dayz_server\
 server_playerDied =			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerDied.sqf";
 server_publishObj = 		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_publishObject.sqf";	//Creates the object in DB
 server_deleteObj =			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_deleteObj.sqf"; 	//Removes the object from the DB
+server_swapObject =			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_swapObject.sqf"; 
 server_publishVeh = 		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_publishVehicle.sqf"; // Custom to add vehicles
 server_publishVeh2 = 		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_publishVehicle2.sqf"; // Custom to add vehicles
 server_tradeObj = 			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_tradeObject.sqf";
@@ -36,6 +37,7 @@ server_deaths = 			compile preprocessFileLineNumbers "\z\addons\dayz_server\comp
 	//[] ExecVM "\z\addons\dayz_server\Maps\military\necamp.sqf"; // Activation
 	
 // Load Bases
+   [] ExecVM "\z\addons\dayz_server\Maps\kaosbase.sqf"; // Activation
    [] ExecVM "\z\addons\dayz_server\Maps\Sobor_Hospital.sqf"; // Activation
    [] execVM "\z\addons\dayz_server\Maps\villages.sqf"; //Epoch Villages - By Bungle (ON)
    [] execVM "\z\addons\dayz_server\Maps\raceday.sqf"; //Coastal Race Day - By Bungle (ON)
@@ -498,8 +500,12 @@ dayz_recordLogin = {
 };
 
 //----------InitMissions--------//
+
+  publicVariable "MissionGo";
+  publicVariable "MissionGoMinor";
   MissionGo = 0;
   MissionGoMinor = 0;
+  
     if (isServer) then {
   SMarray = ["SM1","SM2","SM3","SM4","SM5","SM6"];
     [] execVM "\z\addons\dayz_server\missions\major\SMfinder.sqf"; //Starts major mission system
@@ -507,56 +513,15 @@ dayz_recordLogin = {
     [] execVM "\z\addons\dayz_server\missions\minor\SMfinder.sqf"; //Starts minor mission system
     };
     //---------EndInitMissions------//
-
-// Cleanup flies
-server_cleanFlies = 
-{
-    private ["_sound","_newdayz_flyMonitor","_body"];
-	
-	DZE_FlyWorkingSet = DZE_FlyWorkingSet+dayz_flyMonitor;
-	dayz_flyMonitor = [];
-
-	_newdayz_flyMonitor = [];
-	{
-		_sound = _x select 0;
-		_body = _x select 1;
-
-		// Remove flies
-		if (isNull _body) then {
-			deleteVehicle _sound;
-		} else {
-			_newdayz_flyMonitor set [count _newdayz_flyMonitor,_x];
-		};
-
-	} forEach DZE_FlyWorkingSet;
-	DZE_FlyWorkingSet = _newdayz_flyMonitor;
-};
-
 server_cleanDead = {
-	private ["_objectPos","_noPlayerNear","_body","_handle"];
+	private ["_objectPos","_noPlayerNear"];
 	{
 		if (_x isKindOf "zZombie_Base") then
 		{
-			_objectPos = getPosATL _x;
-			_noPlayerNear = {isPlayer _x} count (_objectPos nearEntities ["CAManBase",35]) == 0;
-			if (_noPlayerNear) then
-			{
-				deleteVehicle _x;
-			};
-		} else {
-			_handle = _x getVariable ["handle",true];
-			if (_handle) then {
-				_x enableSimulation false;
-				_body removeAllEventHandlers "HandleDamage";
-				_body removeAllEventHandlers "Killed";
-				_body removeAllEventHandlers "Fired";
-				_body removeAllEventHandlers "FiredNear";
-				_x setVariable ["handle",false];
-			};
+			deleteVehicle _x;
 		};
 	} forEach allDead;
 };
-
 
 server_cleanLoot =
 {

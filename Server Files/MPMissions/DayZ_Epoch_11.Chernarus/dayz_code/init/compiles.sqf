@@ -1,1 +1,2 @@
 fnc_usec_selfActions = compile preprocessFileLineNumbers "dayz_code\compile\fn_selfActions.sqf";            // fnc_usec_selfActions - adds custom actions to dayz code
+player_fillWater = compile preprocessFileLineNumbers "dayz_code\compile\player_waterfill.sqf";

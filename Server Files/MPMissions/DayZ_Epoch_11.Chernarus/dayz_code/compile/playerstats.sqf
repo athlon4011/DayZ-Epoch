@@ -28,7 +28,7 @@ fnc_debug = {
         _kills,
         _headShots,
         round diag_FPS,
-		(round(360-(serverTime) / 60))
+		(round(240-(serverTime) / 60))
         ];
     sleep 1;
     };

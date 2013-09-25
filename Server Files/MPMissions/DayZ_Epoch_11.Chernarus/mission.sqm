@@ -1151,6 +1151,58 @@ class Mission
 					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
 				};
 			};
+			class Sensors
+			{
+					items=3;
+					class Item0
+					{
+						position[]={11447.472,0,11364.504};
+						a=150;
+						b=150;
+						activationBy="ANY";
+						repeating=1;
+						interruptable=1;
+						age="UNKNOWN";
+						text="Klen_West";
+						name="Klen_West";
+						expActiv="if (playerSide == WEST) then {[Klen_West] execVM ""Plugins\safezone\safezone.sqf""};";
+						class Effects
+						{
+						};
+					};
+					class Item1
+					{
+						position[]={4063.4226,0,11664.19};
+						a=150;
+						b=150;
+						activationBy="ANY";
+						repeating=1;
+						interruptable=1;
+						age="UNKNOWN";
+						text="Bash_West";
+						name="Bash_West";
+						expActiv="if (playerSide == WEST) then {[Bash_West] execVM ""Plugins\safezone\safezone.sqf""};";
+						class Effects
+						{
+						};
+					};
+					class Item2
+					{
+						position[]={6325.6772,0,7807.7412};
+						a=150;
+						b=150;
+						activationBy="ANY";
+						repeating=1;
+						interruptable=1;
+						age="UNKNOWN";
+						text="Stary_West";
+						name="Stary_West";
+						expActiv="if (playerSide == WEST) then {[Stary_West] execVM ""Plugins\safezone\safezone.sqf""};";
+						class Effects
+						{
+						};
+					};
+			};
 		};
 		class Item1
 		{

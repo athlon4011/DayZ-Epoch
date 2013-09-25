@@ -124,7 +124,7 @@ _lootItems = [
 	["ItemTentOld",20,"none","Building"],
 	["ItemVault",20,"none","Building"],
 	["ItemWire",20,"none","Building"],
-	["PartWoodPile",20,"none","Building"],
+	["PartWoodPile",90,"none","Building"],
 	["30m_plot_kit",20,"none","Building"],
 	["ItemCorrugated",20,"none","Building"],
 	["ItemTentDomed",20,"none","Building"],
@@ -135,6 +135,8 @@ _lootItems = [
 	["PartWoodPlywood",20,"none","Building"],
 	["ItemLightBulb",20,"none","Building"],
 	["ItemBurlap",20,"none","Building"],
+	["PartGeneric",20,"none","Building"],
+	["ItemCanvas",20,"none","Building"],
 	
 	["ItemJerrycan",20,"none","Car"],
 	["ItemJerrycanEmpty",20,"none","Car"],

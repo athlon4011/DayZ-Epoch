@@ -7,4 +7,10 @@
 		<group>0</group>
 		<groupname>Super Admin</groupname>
 	</admin>
+	<admin id="2">
+		<name>ZeroKewl</name>
+		<guid>42c57aabea73f17ce20376343c3a5258</guid>
+		<group>0</group>
+		<groupname>Super Admin</groupname>
+	</admin>
 </BEAdmins>

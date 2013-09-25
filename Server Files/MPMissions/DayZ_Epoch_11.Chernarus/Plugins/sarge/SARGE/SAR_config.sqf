@@ -60,7 +60,7 @@ SAR_FIX_VEHICLE_ISSUE = true;
 SAR_AI_disable_UPSMON_AI = false;
 
 // enable / disable AI stealing vehicles - if you enable this, be sure to check KRON_UPS_searchVehicledist value below
-SAR_AI_STEAL_VEHICLE = true;
+SAR_AI_STEAL_VEHICLE = false;
 
 // -----------------------------------------------
 // Humanity values 
@@ -154,7 +154,7 @@ SAR_DELETE_TIMEOUT = 240; // 4 minutes
 SAR_DETECT_HOSTILE = 200;
 
 // the max range in meters within AI is detecting player bandits from a vehicle, e.g. heli or land vehicle and makes them hostile - the bigger this value, the more CPU needed
-SAR_DETECT_HOSTILE_FROM_VEHICLE = 500;
+SAR_DETECT_HOSTILE_FROM_VEHICLE = 350;
 
 // the interval in seconds that an AI scans for new hostiles. The lower this value, the more accurate, but your server will see an impact. Recommended value: 15 
 SAR_DETECT_INTERVAL = 15;

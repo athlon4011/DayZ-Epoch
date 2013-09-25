@@ -25,9 +25,9 @@ _role1names = ["ZeroKewl", "Scenekicks"];
 //_role2 = "ANOTHER MESSAGE<br />Sub message"; // Sub message shows 1 row below ANOTHER MESSAGE
 //_role2names = ["Name of someone or something"];
 _role2 = "SERVER NOTES"; // Sub message shows 1 row below ANOTHER MESSAGE
-_role2names = ["Restart 4 times a day","All AI are hostile","Map Additions","AI Camps"];
+_role2names = ["Restart 6 times a day","All AI are hostile","Map Additions","AI Camps"];
 _role3 = "SERVER MODS";
-_role3names = ["Self-bloodbag", "Auto-refuel/repair", "Ammo Press","Tent Healing","Suicide"];
+_role3names = ["Self-bloodbag", "Auto-refuel/repair", "Ammo Press","Tent Healing","Suicide","Drinking"," - Ponds/Wells"," - Fill Bottle from rain"];
 _role4 = "Missions";
 _role4names = ["Random Locations","Weighted loot drops"," - Weapons and Ammo"," - Medical Supplies"," - Skins and Backpacks"," - Building and Vehicles Parts"];
 _role5 = "WEBSITE";
@@ -43,7 +43,7 @@ _role6names = ["DayZ.st", "Bohemia Interactive", "OpenDayZ.net", "ArmAholic.com"
 	_finalText = _finalText + "<t size='0.55' color='#ffffff' align='left'>";
 	{_finalText = _finalText + format ["%1<br />", _x]} forEach _memberNames;
 	_finalText = _finalText + "</t>";
-	_onScreenTime = 1 + (((count _memberNames) - 1) * 0.5);
+	_onScreenTime = 1 + (((count _memberNames) - 1) * 0.7);
 	[
 		_finalText,
 		[safezoneX + safezoneW - 0.5,0.35],
