@@ -10,12 +10,12 @@ _minQty = 5;
 _maxQty = 7;
 
 // Number of items per category allowed (If set to 0 it will not add items from that category)
-_numPrim = 2; // Primary Weapons
-_numPist = 2; // Pistols
-_numClothes = 2; // Skins
-_numPack = 2; // Backpacks
-_numBuild = 2; // Building Items
-_numCar = 2; // Vehicle Parts
+_numPrim = 3; // Primary Weapons
+_numPist = 3; // Pistols
+_numClothes = 3; // Skins
+_numPack = 3; // Backpacks
+_numBuild = 3; // Building Items
+_numCar = 3; // Vehicle Parts
 	
 // These items are always included
 _toolsAlways = ["ItemToolbox","ItemMap"]; 

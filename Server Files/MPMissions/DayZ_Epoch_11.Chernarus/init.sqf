@@ -120,7 +120,7 @@ if (!isDedicated) then {
 	[] execVM "dayz_code\compile\playerstats.sqf";
 	
 	//Lights
-	//[17,6,true,false,true,true,72,242,600,10,[0.698, 0.556, 0.419],"Generator_DZ",208,"",0.5] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
+	//[0,0,true,true,true,58,280,600,[0.698, 0.556, 0.419],"Generator_DZ",0.1] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 };
 #include "\z\addons\dayz_code\system\REsec.sqf"
 
@@ -131,9 +131,6 @@ call compile preprocessFileLineNumbers "Plugins\sarge\UPSMON\scripts\Init_UPSMON
 call compile preprocessfile "Plugins\sarge\SHK_pos\shk_pos_init.sqf";
 // run SAR_AI
 [] execVM "Plugins\sarge\SARGE\SAR_AI_init.sqf";
-
-// CPC Nametags
-[] execVM "Plugins\nametags\cpcnametags.sqf";
 
 sleep 20;
 // Mission Marker Loop

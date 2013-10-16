@@ -6,12 +6,12 @@ clearMagazineCargoGlobal _crate2;
 _lootItems = call fnc_items;
 
 // Ammo quantities
-_minQty = 5;
-_maxQty = 7;
+_minQty = 3;
+_maxQty = 5;
 
 // Number of items per category allowed (If set to 0 it will not add items from that category)
-_numPrim = 0; // Primary Weapons
-_numPist = 2; // Pistols
+_numPrim = 1; // Primary Weapons
+_numPist = 1; // Pistols
 _numClothes = 1; // Skins
 _numPack = 1; // Backpacks
 _numBuild = 1; // Building Items

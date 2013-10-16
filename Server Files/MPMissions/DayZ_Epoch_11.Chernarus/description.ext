@@ -148,6 +148,7 @@ class DayZ_loadingScreen
 		};
 	};
 };
+
 class CfgSounds
 {
     sounds[] = {};
